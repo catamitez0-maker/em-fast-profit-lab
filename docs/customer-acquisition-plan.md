@@ -20,6 +20,8 @@ Use:
 
 ```text
 data/prospect-leads.csv
+data/outreach-crm.csv
+docs/outreach-drafts.md
 ```
 
 The file includes public source URL, contact route, fit reason, and a personalized first line. Do not blast the list. Send one message at a time after checking the current page.
