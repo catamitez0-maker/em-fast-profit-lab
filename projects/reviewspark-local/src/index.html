@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReviewSpark Local</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ReviewSpark Local</p>
+        <h1>Personal review replies for local businesses</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="secondary" id="loadSampleBtn" type="button">Load Sample</button>
+        <label class="file-button" for="csvInput">Import CSV</label>
+        <input id="csvInput" type="file" accept=".csv,text/csv">
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="workspace" aria-label="Review workspace">
+        <div class="controls-band">
+          <div class="field-grid">
+            <label>
+              Business
+              <input id="businessName" type="text" value="BrightPath Dental">
+            </label>
+            <label>
+              Industry
+              <input id="industry" type="text" value="dental clinic">
+            </label>
+            <label>
+              City
+              <input id="city" type="text" value="Austin">
+            </label>
+            <label>
+              Owner
+              <input id="ownerName" type="text" value="Dr. Lee">
+            </label>
+          </div>
+
+          <div class="mode-row" role="group" aria-label="Tone">
+            <input id="toneWarm" name="tone" type="radio" value="warm" checked>
+            <label for="toneWarm">Warm</label>
+            <input id="toneDirect" name="tone" type="radio" value="direct">
+            <label for="toneDirect">Direct</label>
+            <input id="tonePolished" name="tone" type="radio" value="polished">
+            <label for="tonePolished">Polished</label>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="review-input">
+            Paste reviews
+            <textarea id="reviewText" rows="7" spellcheck="true">5 | Maria S | The staff was patient and explained everything clearly. I loved how clean the office felt.
+2 | Jason T | I waited almost 40 minutes past my appointment time and nobody updated me.
+4 | Priya K | Great service overall. The price was a little higher than I expected but the quality was solid.</textarea>
+          </label>
+          <div class="action-panel">
+            <button id="analyzeBtn" type="button">Generate Replies</button>
+            <button id="exportBtn" class="secondary" type="button">Export CSV</button>
+            <button id="copyAllBtn" class="secondary" type="button">Copy All</button>
+          </div>
+        </div>
+
+        <div class="metric-grid" aria-label="Review summary">
+          <div class="metric">
+            <span id="reviewCount">0</span>
+            <p>reviews</p>
+          </div>
+          <div class="metric">
+            <span id="avgRating">0.0</span>
+            <p>avg rating</p>
+          </div>
+          <div class="metric urgent">
+            <span id="urgentCount">0</span>
+            <p>urgent</p>
+          </div>
+          <div class="metric">
+            <span id="genericRisk">0</span>
+            <p>generic risk</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Output views">
+          <button class="tab active" data-view="replies" type="button">Replies</button>
+          <button class="tab" data-view="campaign" type="button">Campaign</button>
+          <button class="tab" data-view="brief" type="button">Client Brief</button>
+        </div>
+
+        <section id="repliesView" class="view active" aria-label="Generated replies">
+          <div id="replyList" class="reply-list"></div>
+        </section>
+
+        <section id="campaignView" class="view" aria-label="Campaign outputs">
+          <div class="output-grid">
+            <article>
+              <h2>Review Request SMS</h2>
+              <textarea id="smsOutput" rows="6"></textarea>
+            </article>
+            <article>
+              <h2>Review Request Email</h2>
+              <textarea id="emailOutput" rows="9"></textarea>
+            </article>
+            <article>
+              <h2>Google Business Profile Posts</h2>
+              <textarea id="postOutput" rows="9"></textarea>
+            </article>
+          </div>
+        </section>
+
+        <section id="briefView" class="view" aria-label="Client brief">
+          <textarea id="briefOutput" rows="16"></textarea>
+        </section>
+      </section>
+
+      <aside class="sell-panel" aria-label="Commercial package">
+        <div class="sell-block">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$149 Review Response Sprint</h2>
+          <p>Clean up 50 reviews, deliver ready-to-post replies, and send a weekly local trust content pack.</p>
+        </div>
+
+        <div class="sell-block">
+          <h3>Why owners buy</h3>
+          <ul>
+            <li>Customers notice unanswered reviews.</li>
+            <li>Generic replies weaken trust.</li>
+            <li>Owners lack time to respond quickly.</li>
+          </ul>
+        </div>
+
+        <div class="sell-block">
+          <h3>First niches</h3>
+          <div class="chips">
+            <span>Med spas</span>
+            <span>Dentists</span>
+            <span>HVAC</span>
+            <span>Auto repair</span>
+            <span>Salons</span>
+          </div>
+        </div>
+
+        <div class="sell-block">
+          <h3>Ethical guardrail</h3>
+          <p>Use only real customer feedback. Never generate fake reviews or incentivized claims.</p>
+        </div>
+      </aside>
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

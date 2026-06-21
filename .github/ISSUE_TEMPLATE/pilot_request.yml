@@ -1,0 +1,41 @@
+name: Pilot request
+description: Request a 24-hour cleanup pilot.
+title: "Pilot request: "
+labels: ["pilot"]
+body:
+  - type: dropdown
+    id: offer
+    attributes:
+      label: Which offer do you want to test?
+      options:
+        - ReturnReply Pro
+        - AltText Cataloger
+        - Chargeback Evidence Kit
+        - InvoiceNudge
+        - ReviewSpark Local
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What is the current workflow or pain?
+      description: Keep it brief. Do not paste private customer data.
+      placeholder: We have a backlog of return requests and need cleaner customer replies.
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: What rows can you provide?
+      description: Describe the columns you can share. Use anonymized data.
+      placeholder: order_id, item, reason, days_since_order, condition, value
+    validations:
+      required: true
+  - type: input
+    id: timeline
+    attributes:
+      label: Timeline
+      placeholder: 24 hours, this week, next month
+    validations:
+      required: true

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>QuoteQuick Pro</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div><p class="eyebrow">QuoteQuick Pro</p><h1>Turn home-service leads into clear quote packs.</h1></div><button class="secondary" id="sampleBtn" type="button">Load Sample</button></header>
+<main class="app">
+<section>
+  <div class="panel"><div class="grid"><label>Business<input id="business" value="Oakline HVAC"></label><label>Trade<input id="trade" value="HVAC contractor"></label><label>City<input id="city" value="Phoenix"></label><label>Owner<input id="owner" value="Sam Rivera"></label></div></div>
+  <div class="panel"><div class="grid"><label>Hourly Rate<input id="rate" type="number" value="115"></label><label>Labor Hours<input id="hours" type="number" value="4"></label><label>Materials<input id="materials" type="number" value="380"></label><label>Markup %<input id="markup" type="number" value="22"></label></div><label style="margin-top:14px">Lead Request<textarea id="lead">Our AC is blowing warm air and the outside unit sounds loud. We need someone this week and want to know the likely cost before booking.</textarea></label><div class="actions"><button id="generateBtn" type="button">Generate Quote Pack</button><button class="secondary" id="exportBtn" type="button">Export CSV</button><button class="secondary" id="copyBtn" type="button">Copy Pack</button></div></div>
+  <div class="metrics"><div class="metric"><span id="total">$0</span><p>estimate</p></div><div class="metric"><span id="deposit">$0</span><p>deposit</p></div><div class="metric"><span id="flags">0</span><p>risk flags</p></div><div class="metric"><span id="margin">0%</span><p>gross margin</p></div></div>
+  <div class="tabs"><button class="tab active" data-view="scope" type="button">Scope</button><button class="tab" data-view="messages" type="button">Messages</button><button class="tab" data-view="brief" type="button">Brief</button></div>
+  <section class="output view active" id="scopeView"><div id="scopeOutput"></div></section>
+  <section class="output view" id="messagesView"><div class="output-grid"><label>SMS<textarea id="smsOut"></textarea></label><label>Email<textarea id="emailOut"></textarea></label><label>Follow-up<textarea id="followOut"></textarea></label><label>Terms<textarea id="termsOut"></textarea></label></div></section>
+  <section class="output view" id="briefView"><textarea id="briefOut"></textarea></section>
+</section>
+<aside class="side"><div class="side-section"><p class="eyebrow">Fast offer</p><h2>$199 Quote Response Setup</h2><p>Set up quote templates, lead triage rules, and 10 ready-to-send estimate packs for a contractor.</p></div><div class="side-section"><h3>Sell to</h3><div class="chips"><span>HVAC</span><span>Plumbing</span><span>Roofing</span><span>Electrical</span></div></div><div class="side-section"><p class="notice">Estimates are drafts. Final pricing should be approved by a licensed pro.</p></div></aside>
+</main><div id="toast"></div><script src="../../shared/app-utils.js"></script><script src="app.js"></script></body></html>

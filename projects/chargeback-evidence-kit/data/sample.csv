@@ -1,0 +1,6 @@
+type,detail,date,available
+receipt,Order confirmation emailed and opened,2026-06-02,yes
+shipping,Carrier scan shows delivered,2026-06-05,yes
+customer_message,Customer asked for sizing help,2026-06-06,yes
+refund_policy,Policy shown at checkout,2026-06-02,yes
+ip_match,Prior order IP match,2026-06-02,no

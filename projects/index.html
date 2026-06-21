@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fast-Profit Project Portfolio</title>
+    <style>
+      :root { --ink:#17252e; --muted:#60717c; --line:#d8e2e7; --paper:#f5f2e9; --surface:#fff; --green:#0f766e; --blue:#315f9f; --gold:#b7791f; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); }
+      header { padding:36px clamp(18px,4vw,56px); background:var(--surface); border-bottom:1px solid var(--line); }
+      h1 { margin:0; max-width:980px; font-size:clamp(34px,5vw,64px); line-height:1; letter-spacing:0; }
+      p { color:var(--muted); line-height:1.55; }
+      .eyebrow { margin:0 0 8px; color:var(--green); font-weight:800; text-transform:uppercase; letter-spacing:.12em; font-size:12px; }
+      main { padding:26px clamp(18px,4vw,56px) 56px; display:grid; gap:18px; grid-template-columns:repeat(3,minmax(0,1fr)); }
+      a.card { min-height:250px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; padding:20px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:inherit; text-decoration:none; box-shadow:0 16px 40px rgba(23,37,46,.08); }
+      .num { width:42px; height:42px; display:grid; place-items:center; border-radius:50%; color:#fff; font-weight:900; background:var(--green); }
+      h2 { margin:0; font-size:22px; }
+      .tag { display:inline-flex; align-self:flex-start; border-radius:999px; padding:6px 10px; background:#e3f1ef; color:var(--green); font-size:12px; font-weight:800; }
+      @media (max-width:1200px){ main{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+      @media (max-width:680px){ main{ grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">EM Fast-Profit Lab</p>
+      <h1>Nine small products plus one revenue operating center.</h1>
+      <p>Each customer project is independent, static, and demo-ready. The command center turns the portfolio into a daily monetization workflow.</p>
+    </header>
+    <main>
+      <a class="card" href="monetization-command-center/src/index.html"><span class="num">00</span><div><h2>Monetization Command Center</h2><p>Pick the weekly focus offer, calculate revenue, generate outreach, and follow a paid-delivery checklist.</p></div><span class="tag">Revenue ops</span></a>
+      <a class="card" href="reviewspark-local/src/index.html"><span class="num">01</span><div><h2>ReviewSpark Local</h2><p>Personalized review replies and reputation work queues for local businesses.</p></div><span class="tag">$149 sprint</span></a>
+      <a class="card" href="quotequick-pro/src/index.html"><span class="num">02</span><div><h2>QuoteQuick Pro</h2><p>Contractor lead-to-estimate packs with scope, pricing, and follow-up copy.</p></div><span class="tag">$199 setup</span></a>
+      <a class="card" href="menu-margin-lab/src/index.html"><span class="num">03</span><div><h2>MenuMargin Lab</h2><p>Menu margin flags, price suggestions, and weekly promo content for restaurants.</p></div><span class="tag">$149 audit</span></a>
+      <a class="card" href="invoice-nudge/src/index.html"><span class="num">04</span><div><h2>InvoiceNudge</h2><p>Invoice aging dashboard and polite payment reminder sequences for small firms.</p></div><span class="tag">$49/mo</span></a>
+      <a class="card" href="stayreply-kit/src/index.html"><span class="num">05</span><div><h2>StayReply Kit</h2><p>Airbnb host message templates, issue replies, and guest experience checklists.</p></div><span class="tag">$99 setup</span></a>
+      <a class="card" href="chargeback-evidence-kit/src/index.html"><span class="num">06</span><div><h2>Chargeback Evidence Kit</h2><p>One clean evidence checklist and counterargument for a merchant dispute.</p></div><span class="tag">$149 packet</span></a>
+      <a class="card" href="return-reply-pro/src/index.html"><span class="num">07</span><div><h2>ReturnReply Pro</h2><p>Return request triage, customer replies, and store-credit save paths.</p></div><span class="tag">$99 setup</span></a>
+      <a class="card" href="alttext-cataloger/src/index.html"><span class="num">08</span><div><h2>AltText Cataloger</h2><p>Batch product image alt text with accessibility flags and CSV export.</p></div><span class="tag">$129 pass</span></a>
+      <a class="card" href="churn-save-script/src/index.html"><span class="num">09</span><div><h2>ChurnSave Script</h2><p>Cancellation-save offers, support scripts, and confirmation copy.</p></div><span class="tag">$149 pack</span></a>
+    </main>
+  </body>
+</html>

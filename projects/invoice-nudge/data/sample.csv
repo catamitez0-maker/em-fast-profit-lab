@@ -1,0 +1,4 @@
+client,invoice,due_date,amount,status
+Acme Co,INV-1007,2026-06-05,2400,unpaid
+Bright Labs,INV-1008,2026-06-19,850,unpaid
+Cedar Retail,INV-1002,2026-05-10,5200,unpaid

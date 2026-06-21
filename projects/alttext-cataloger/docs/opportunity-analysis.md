@@ -1,0 +1,17 @@
+# Opportunity Analysis: AltText Cataloger
+
+## Decision
+
+Build AltText Cataloger as a narrow, single-purpose productized service. The first version should stay static and service-led: paste rows, generate the deliverable, review, and send.
+
+## Evidence
+
+The European Accessibility Act became applicable in 2025 for covered digital services, and W3C says images need text alternatives based on their purpose.
+
+## Why It Can Monetize Quickly
+
+The buyer already has the pain and already owns the underlying data. The MVP does not require integrations, accounts, or a broad workflow migration. The paid result is one finished artifact.
+
+## MVP Boundary
+
+This product does exactly one thing: generate the customer-facing or operator-facing output for the named workflow. It should not become a full helpdesk, compliance platform, payment processor, or catalog system until sales data proves recurring demand.

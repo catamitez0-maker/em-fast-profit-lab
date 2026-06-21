@@ -1,0 +1,5 @@
+customer,plan,mrr,tenure_months,reason,usage,last_login_days
+Riley,Pro,49,14,too expensive,high,2
+Morgan,Starter,19,2,missing feature,medium,6
+Casey,Team,149,22,not using,low,41
+Avery,Pro,49,8,switched competitor,medium,12

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monetization Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Revenue Ops</p>
+        <h1>Monetization Command Center</h1>
+      </div>
+      <button class="secondary" id="resetBtn" type="button">Reset Defaults</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>Focus Offer<select id="focusOffer"></select></label>
+            <label>Leads / Day<input id="leadsPerDay" type="number" value="30"></label>
+            <label>Reply Rate %<input id="replyRate" type="number" value="8"></label>
+            <label>Close Rate %<input id="closeRate" type="number" value="20"></label>
+          </div>
+          <div class="grid three compact-grid">
+            <label>Sprint Days<input id="sprintDays" type="number" value="14"></label>
+            <label>Retainer Attach %<input id="retainerAttach" type="number" value="25"></label>
+            <label>Delivery Hours / Sale<input id="deliveryHours" type="number" value="1.25"></label>
+          </div>
+          <div class="actions">
+            <button id="generateBtn" type="button">Build Revenue Plan</button>
+            <button class="secondary" id="exportBtn" type="button">Export CSV</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Outreach</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="salesOut">0</span><p>projected sales</p></div>
+          <div class="metric"><span id="cashOut">$0</span><p>sprint cash</p></div>
+          <div class="metric"><span id="mrrOut">$0</span><p>new MRR</p></div>
+          <div class="metric"><span id="rateOut">$0</span><p>effective hourly</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="strategy" type="button">Strategy</button>
+          <button class="tab" data-view="calculator" type="button">Calculator</button>
+          <button class="tab" data-view="scripts" type="button">Scripts</button>
+          <button class="tab" data-view="delivery" type="button">Delivery</button>
+        </div>
+        <section class="output view active" id="strategyView">
+          <div id="priorityOut"></div>
+        </section>
+        <section class="output view" id="calculatorView">
+          <div class="output-grid">
+            <div id="calcOut"></div>
+            <div id="channelOut"></div>
+          </div>
+        </section>
+        <section class="output view" id="scriptsView">
+          <div class="script-layout">
+            <label>Personalization Note<textarea id="personalization">I noticed your team already has the input rows needed, but the customer-facing response still looks manual.</textarea></label>
+            <label>Outbound Script<textarea id="scriptOut"></textarea></label>
+          </div>
+        </section>
+        <section class="output view" id="deliveryView">
+          <div id="deliveryOut"></div>
+        </section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">This Week</p>
+          <h2 id="sideOffer">Pick one wedge</h2>
+          <p id="sideReason">Run a focused sprint instead of selling all nine products at once.</p>
+        </div>
+        <div class="side-section">
+          <h3>Operating Rule</h3>
+          <p>Sell a paid artifact first, then turn repeat requests into monthly maintenance.</p>
+        </div>
+        <div class="side-section">
+          <h3>Score Gate</h3>
+          <div class="chips">
+            <span>2 warm replies / 20</span>
+            <span>1 paid pilot</span>
+            <span>Under 60 min delivery</span>
+          </div>
+        </div>
+        <div class="side-section">
+          <p class="notice">Use this as an operating aid. Legal, tax, dispute, accessibility, and cancellation-policy claims still need human review before customer delivery.</p>
+        </div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
