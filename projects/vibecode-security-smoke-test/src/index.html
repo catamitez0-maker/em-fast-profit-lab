@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VibeCode Security Smoke Test</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">VibeCode Security Smoke Test</p>
+        <h1>Gate AI-built apps before launch with a focused security report.</h1>
+      </div>
+      <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>App<input id="appNameInput" value="LaunchPanel AI"></label>
+            <label>Stack<input id="stack" value="Next.js, Supabase, Stripe"></label>
+            <label>Launch Date<input id="launchDate" value="2026-07-01"></label>
+            <label>Reviewer<input id="reviewer" value="EM Lab"></label>
+          </div>
+          <label class="field-stack">Smoke Test Findings CSV<textarea id="findingData">area,route,check,severity,auth_required,public_data,llm_feature,evidence
+auth,/dashboard,Protected page opens without login,high,no,customer metrics,no,private route returned content
+secrets,/api/config,Client bundle exposes service key,critical,no,api key,no,token-like string visible
+payments,/checkout,Webhook signature not verified,high,yes,payment event,no,no signature branch found
+llm,/api/chat,Prompt injection can reveal policy text,medium,yes,user messages,yes,ignored system rules in test
+storage,/uploads,File upload accepts script extension,medium,yes,user files,no,no extension allowlist</textarea></label>
+          <div class="actions">
+            <button id="generateBtn" type="button">Generate Gate</button>
+            <button class="secondary" id="exportBtn" type="button">Export Findings</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Report</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="gate">Hold</span><p>launch gate</p></div>
+          <div class="metric"><span id="critical">0</span><p>critical</p></div>
+          <div class="metric"><span id="high">0</span><p>high</p></div>
+          <div class="metric"><span id="price">$249</span><p>smoke test</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="findings" type="button">Findings</button>
+          <button class="tab" data-view="gateplan" type="button">Gate Plan</button>
+          <button class="tab" data-view="report" type="button">Report</button>
+        </div>
+        <section class="output view active" id="findingsView"><div id="findingsOut"></div></section>
+        <section class="output view" id="gateplanView"><div id="gatePlanOut"></div></section>
+        <section class="output view" id="reportView"><textarea id="reportOut"></textarea></section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$249 launch security smoke test</h2>
+          <p>Review auth, secrets, payment webhooks, file upload, and LLM abuse risks before a small app goes live.</p>
+        </div>
+        <div class="side-section">
+          <h3>Sell to</h3>
+          <div class="chips"><span>AI founders</span><span>No-code agencies</span><span>Vibe coders</span><span>Indie SaaS</span></div>
+        </div>
+        <div class="side-section"><p class="notice">This is a launch smoke test. It does not replace a full penetration test or legal compliance review.</p></div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

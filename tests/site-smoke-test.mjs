@@ -44,6 +44,11 @@ assert.ok(payPage.includes("Book pilot"), "pay page should expose a pilot bookin
 assert.ok(payPage.includes("ReturnReply Pro"), "pay page should list ReturnReply Pro");
 assert.ok(payPage.includes("AltText Cataloger"), "pay page should list AltText Cataloger");
 assert.ok(payPage.includes("Chargeback Evidence Kit"), "pay page should list Chargeback Evidence Kit");
+assert.ok(payPage.includes("InboxReady Deliverability Audit"), "pay page should list InboxReady Deliverability Audit");
+assert.ok(payPage.includes("AI Search Presence Monitor"), "pay page should list AI Search Presence Monitor");
+assert.ok(payPage.includes("VibeCode Security Smoke Test"), "pay page should list VibeCode Security Smoke Test");
+assert.ok(payPage.includes("SupportBot QA Harness"), "pay page should list SupportBot QA Harness");
+assert.ok(payPage.includes("AI Disclosure Register Kit"), "pay page should list AI Disclosure Register Kit");
 
 for (const slug of ["return-reply-pro", "alttext-cataloger", "chargeback-evidence-kit"]) {
   const input = read(`../samples/${slug}/input.csv`);

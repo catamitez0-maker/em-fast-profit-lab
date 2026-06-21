@@ -1,0 +1,6 @@
+area,route,check,severity,auth_required,public_data,llm_feature,evidence
+auth,/dashboard,Protected page opens without login,high,no,customer metrics,no,private route returned content
+secrets,/api/config,Client bundle exposes service key,critical,no,api key,no,token-like string visible
+payments,/checkout,Webhook signature not verified,high,yes,payment event,no,no signature branch found
+llm,/api/chat,Prompt injection can reveal policy text,medium,yes,user messages,yes,ignored system rules in test
+storage,/uploads,File upload accepts script extension,medium,yes,user files,no,no extension allowlist

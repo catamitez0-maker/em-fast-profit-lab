@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Search Presence Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">AI Search Presence Monitor</p>
+        <h1>Track whether AI answers mention the brand and what content should be fixed.</h1>
+      </div>
+      <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>Brand<input id="brand" value="PawPure"></label>
+            <label>Website<input id="site" value="pawpure.example"></label>
+            <label>Category<input id="category" value="eco dog beds"></label>
+            <label>Report Lead<input id="lead" value="EM Lab"></label>
+          </div>
+          <label class="field-stack">Prompt Matrix CSV<textarea id="promptData">prompt,engine,mentioned,position,sentiment,target_url,cited_url,competitor,gap
+best eco friendly dog beds,AI Overview,yes,2,positive,/collections/dog-beds,/guides/washable-dog-beds,CloudPaws,missing comparison table
+machine washable dog bed for apartments,ChatGPT Search,no,0,neutral,/products/apartment-bed,,NestPup,needs apartment-specific page
+non toxic dog bed brand,Perplexity,yes,4,mixed,/pages/materials,/pages/materials,CloudPaws,proof section too thin
+orthopedic dog bed under 150,AI Overview,no,0,neutral,/collections/orthopedic,,SleepyTail,pricing page not structured
+best dog bed for senior small dogs,ChatGPT Search,yes,3,positive,/products/senior-small-bed,/products/senior-small-bed,NestPup,add FAQ schema copy</textarea></label>
+          <div class="actions">
+            <button id="generateBtn" type="button">Generate Monitor</button>
+            <button class="secondary" id="exportBtn" type="button">Export Backlog</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Brief</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="visibility">0%</span><p>visibility</p></div>
+          <div class="metric"><span id="topThree">0</span><p>top 3 mentions</p></div>
+          <div class="metric"><span id="missing">0</span><p>missing prompts</p></div>
+          <div class="metric"><span id="recurring">$299</span><p>monthly monitor</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="presence" type="button">Presence</button>
+          <button class="tab" data-view="backlog" type="button">Backlog</button>
+          <button class="tab" data-view="brief" type="button">Brief</button>
+        </div>
+        <section class="output view active" id="presenceView"><div id="presenceOut"></div></section>
+        <section class="output view" id="backlogView"><div id="backlogOut"></div></section>
+        <section class="output view" id="briefView"><textarea id="briefOut"></textarea></section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$199 AI-search visibility audit</h2>
+          <p>Run a prompt set, score brand presence, compare competitors, and ship a prioritized content-fix backlog.</p>
+        </div>
+        <div class="side-section">
+          <h3>Sell to</h3>
+          <div class="chips"><span>SEO agencies</span><span>Local brands</span><span>Ecommerce</span><span>B2B SaaS</span></div>
+        </div>
+        <div class="side-section"><p class="notice">Manual prompt sampling should be repeated consistently. Treat AI answers as volatile snapshots.</p></div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

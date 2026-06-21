@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Disclosure Register Kit</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">AI Disclosure Register Kit</p>
+        <h1>Build a content register for AI-generated assets and labeling gaps.</h1>
+      </div>
+      <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>Organization<input id="org" value="BrightCart Studio"></label>
+            <label>Review Month<input id="month" value="2026-06"></label>
+            <label>Default Label<input id="labelText" value="Created or assisted with AI; reviewed by our team."></label>
+            <label>Owner<input id="owner" value="Marketing Ops"></label>
+          </div>
+          <label class="field-stack">AI Content Inventory CSV<textarea id="assetData">asset,campaign,channel,asset_type,ai_used,human_review,label_present,region,risk_notes
+Summer hero image,June launch,web,image,generated,yes,no,EU,synthetic product scene
+Founder newsletter,June launch,email,text,assisted,yes,yes,US,edited by founder
+TikTok product demo,June launch,social,video,generated,no,no,EU,synthetic voiceover
+Help center update,Support refresh,web,text,assisted,yes,no,US,policy article drafted with AI
+Ad banner set,Retargeting,paid,image,generated,yes,yes,EU,AI background and copy variants</textarea></label>
+          <div class="actions">
+            <button id="generateBtn" type="button">Generate Register</button>
+            <button class="secondary" id="exportBtn" type="button">Export Register</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Policy Pack</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="readiness">0%</span><p>readiness</p></div>
+          <div class="metric"><span id="unlabeled">0</span><p>unlabeled</p></div>
+          <div class="metric"><span id="reviewGaps">0</span><p>review gaps</p></div>
+          <div class="metric"><span id="monthly">$149</span><p>monthly refresh</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="register" type="button">Register</button>
+          <button class="tab" data-view="labels" type="button">Label Queue</button>
+          <button class="tab" data-view="policy" type="button">Policy Pack</button>
+        </div>
+        <section class="output view active" id="registerView"><div id="registerOut"></div></section>
+        <section class="output view" id="labelsView"><div id="labelsOut"></div></section>
+        <section class="output view" id="policyView"><textarea id="policyOut"></textarea></section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$199 disclosure readiness pack</h2>
+          <p>Create an AI-content register, label queue, and reviewed disclosure copy for marketing and publishing teams.</p>
+        </div>
+        <div class="side-section">
+          <h3>Sell to</h3>
+          <div class="chips"><span>Marketing</span><span>Publishers</span><span>Agencies</span><span>SMBs</span></div>
+        </div>
+        <div class="side-section"><p class="notice">This is an operational readiness kit, not legal advice. Counsel should review regulated use cases.</p></div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

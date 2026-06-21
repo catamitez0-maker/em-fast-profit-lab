@@ -12,6 +12,18 @@ Build the next money-lab batch around five narrow, service-led products that can
 - first MVP deliverable can be a static tool, CSV workflow, checklist, or productized audit;
 - first revenue can happen through a paid pilot in days, not months.
 
+## Implementation Status
+
+All five selected projects now have demo-ready static tools, sample CSV data, monetization packages, opportunity notes, and smoke tests under `projects/`.
+
+| Project | Tool Path | Package Status |
+| --- | --- | --- |
+| AI Search Presence Monitor | `projects/ai-search-presence-monitor/src/index.html` | Implemented |
+| InboxReady Deliverability Audit | `projects/inboxready-deliverability-audit/src/index.html` | Implemented |
+| VibeCode Security Smoke Test | `projects/vibecode-security-smoke-test/src/index.html` | Implemented |
+| SupportBot QA Harness | `projects/supportbot-qa-harness/src/index.html` | Implemented |
+| AI Disclosure Register Kit | `projects/ai-disclosure-register-kit/src/index.html` | Implemented |
+
 ## Selected 5
 
 | Rank | Project | Buyer | First Paid Offer | Why This Is Worth Building Now |
@@ -104,25 +116,25 @@ MVP:
 
 Why fifth: the timing is strong, but it has legal/compliance risk and should be sold as evidence-organization plus operational readiness, not legal compliance certification.
 
-## Recommended Build Order
+## Recommended Operating Order
 
-1. Build **InboxReady Deliverability Audit** first. It is the smallest MVP with the clearest pass/fail checks and fastest paid pilot.
-2. Build **AI Search Presence Monitor** second. It has the best agency resale potential and strongest market narrative.
-3. Build **VibeCode Security Smoke Test** third. It uses our existing code-audit strength and can be sold to AI builders.
-4. Build **SupportBot QA Harness** fourth. It is valuable but needs more careful evaluation design.
-5. Build **AI Disclosure Register Kit** fifth. It is timely but should be handled carefully because of regulatory claims.
+1. Sell **InboxReady Deliverability Audit** first. It is the smallest offer with the clearest pass/fail story and fastest paid pilot.
+2. Sell **AI Search Presence Monitor** second. It has the best agency resale potential and strongest market narrative.
+3. Use **VibeCode Security Smoke Test** for AI builders who already have a live demo or pending launch.
+4. Use **SupportBot QA Harness** when the prospect already has a bot, helpdesk AI rollout, or policy knowledge base.
+5. Use **AI Disclosure Register Kit** for marketing and publishing teams with visible AI-generated assets.
 
-## First 7-Day Execution Plan
+## Next 7-Day Sales Plan
 
 | Day | Action |
 | --- | --- |
-| 1 | Scaffold InboxReady as a static tool: domain input, DNS checklist, sender requirement checklist, exportable report. |
-| 2 | Create 20 outreach leads: newsletters, local agencies, small SaaS, Shopify brands with active newsletters. |
-| 3 | Sell $149 InboxReady audit with a sample domain report. |
-| 4 | Scaffold AI Search Presence Monitor with a 25-prompt manual capture workflow. |
-| 5 | Create sample AI-search visibility report for EM Fast-Profit Lab and one public local business. |
-| 6 | Scaffold VibeCode Security Smoke Test using current repo audit rules as seed checks. |
-| 7 | Publish the new opportunity batch page and add 3 paid-pilot offers to `/pay/`. |
+| 1 | Use the implemented InboxReady tool to create one anonymized sample audit and send it to 20 newsletter, ecommerce, or outbound prospects. |
+| 2 | Use the AI Search Presence Monitor tool to create one sample prompt-visibility report and pitch 10 SEO agencies. |
+| 3 | Offer the $149 InboxReady audit to warm replies and ask for a campaign export plus sender-authentication details. |
+| 4 | Offer the $199 AI Search audit to agencies as a white-label sample they can resell. |
+| 5 | Run one VibeCode Security sample against a public demo app or internal fixture and post the launch-gate offer to AI-builder communities. |
+| 6 | Prepare one SupportBot QA sample using public support-policy scenarios and pitch bot implementers. |
+| 7 | Prepare one AI Disclosure Register sample for an AI-heavy campaign and pitch marketers using synthetic images or video. |
 
 ## Source Links
 

@@ -1,6 +1,6 @@
 # EM Fast-Profit Lab
 
-This workspace contains nine small, service-led micro-SaaS MVPs designed for quick monetization, plus one internal command center for selling them. Each project is separated under `projects/` with its own demo app, market note, monetization package, sample data, and smoke test.
+This workspace contains fourteen small, service-led micro-SaaS MVPs designed for quick monetization, plus one internal command center for selling them. Each project is separated under `projects/` with its own demo app, market note, monetization package, sample data, and smoke test.
 
 ## Portfolio
 
@@ -38,12 +38,17 @@ samples/*/delivery-brief.md
 | 07 | ReturnReply Pro | `projects/return-reply-pro/src/index.html` | $99 return queue setup |
 | 08 | AltText Cataloger | `projects/alttext-cataloger/src/index.html` | $129 catalog alt-text pass |
 | 09 | ChurnSave Script | `projects/churn-save-script/src/index.html` | $149 cancellation-save script |
+| 10 | InboxReady Deliverability Audit | `projects/inboxready-deliverability-audit/src/index.html` | $149 deliverability compliance audit |
+| 11 | AI Search Presence Monitor | `projects/ai-search-presence-monitor/src/index.html` | $199 AI-search visibility audit |
+| 12 | VibeCode Security Smoke Test | `projects/vibecode-security-smoke-test/src/index.html` | $249 launch security smoke test |
+| 13 | SupportBot QA Harness | `projects/supportbot-qa-harness/src/index.html` | $299 bot QA pack |
+| 14 | AI Disclosure Register Kit | `projects/ai-disclosure-register-kit/src/index.html` | $199 AI-content disclosure readiness pack |
 
 ## Market Analysis
 
 See [docs/opportunity-portfolio.md](docs/opportunity-portfolio.md) for the first portfolio decision memo and source links. See [docs/market-round-2.md](docs/market-round-2.md) for the second market scan focused on high-demand single-product MVPs, [docs/round2-backtest-report.md](docs/round2-backtest-report.md) for the backtest results and improvements, and [docs/monetization-strategy.md](docs/monetization-strategy.md) for the complete go-to-market strategy.
 
-The latest broad money-lab scan is [docs/market-opportunity-scan-2026-06.md](docs/market-opportunity-scan-2026-06.md), with the ranked data table in [data/opportunity-scan-2026-06.csv](data/opportunity-scan-2026-06.csv).
+The latest broad money-lab scan is [docs/market-opportunity-scan-2026-06.md](docs/market-opportunity-scan-2026-06.md), with the ranked data table in [data/opportunity-scan-2026-06.csv](data/opportunity-scan-2026-06.csv). The five selected opportunities from that scan are now implemented as projects 10-14.
 
 ## Launch Execution
 
@@ -80,7 +85,7 @@ assets/site.css
 assets/outreach.js
 ```
 
-The nine lightweight project apps share a small static runtime:
+The lightweight project apps share a small static runtime:
 
 ```text
 projects/shared/app-utils.js
@@ -103,12 +108,23 @@ node --check projects/return-reply-pro/src/app.js
 node --check projects/alttext-cataloger/src/app.js
 node --check projects/churn-save-script/src/app.js
 node --check projects/monetization-command-center/src/app.js
+node --check projects/inboxready-deliverability-audit/src/app.js
+node --check projects/ai-search-presence-monitor/src/app.js
+node --check projects/vibecode-security-smoke-test/src/app.js
+node --check projects/supportbot-qa-harness/src/app.js
+node --check projects/ai-disclosure-register-kit/src/app.js
 node --check projects/shared/app-utils.js
 node --check assets/outreach.js
 node tests/portfolio-smoke-test.mjs
 node tests/security-smoke-test.mjs
 node tests/site-smoke-test.mjs
 node tests/round2-backtest.mjs
+node tests/opportunity-scan-implementation-test.mjs
+node projects/inboxready-deliverability-audit/tests/smoke-test.mjs
+node projects/ai-search-presence-monitor/tests/smoke-test.mjs
+node projects/vibecode-security-smoke-test/tests/smoke-test.mjs
+node projects/supportbot-qa-harness/tests/smoke-test.mjs
+node projects/ai-disclosure-register-kit/tests/smoke-test.mjs
 ```
 
 Each project also includes its own `tests/smoke-test.mjs`; run all of them after changing shared runtime or shell styles.

@@ -1,0 +1,6 @@
+prompt,engine,mentioned,position,sentiment,target_url,cited_url,competitor,gap
+best eco friendly dog beds,AI Overview,yes,2,positive,/collections/dog-beds,/guides/washable-dog-beds,CloudPaws,missing comparison table
+machine washable dog bed for apartments,ChatGPT Search,no,0,neutral,/products/apartment-bed,,NestPup,needs apartment-specific page
+non toxic dog bed brand,Perplexity,yes,4,mixed,/pages/materials,/pages/materials,CloudPaws,proof section too thin
+orthopedic dog bed under 150,AI Overview,no,0,neutral,/collections/orthopedic,,SleepyTail,pricing page not structured
+best dog bed for senior small dogs,ChatGPT Search,yes,3,positive,/products/senior-small-bed,/products/senior-small-bed,NestPup,add FAQ schema copy

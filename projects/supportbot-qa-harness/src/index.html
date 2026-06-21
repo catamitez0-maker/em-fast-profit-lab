@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SupportBot QA Harness</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">SupportBot QA Harness</p>
+        <h1>Grade support bot answers before they disappoint customers.</h1>
+      </div>
+      <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>Client<input id="client" value="Northline Support"></label>
+            <label>Bot<input id="bot" value="HelpDesk AI"></label>
+            <label>Policy Version<input id="policy" value="2026-06"></label>
+            <label>QA Lead<input id="lead" value="EM Lab"></label>
+          </div>
+          <label class="field-stack">Scenario Regression CSV<textarea id="scenarioData">scenario,question,expected_policy,bot_answer,required_keywords,forbidden_phrases,priority
+refund window,Can I return shoes after 45 days?,30 day return window; manual exception only,You can return any item any time for a full refund,30 day;exception,any time;full refund,high
+shipping delay,Where is my order? Tracking has not moved for 6 days.,check tracking; escalate after 5 business days,I can check tracking and escalate because it has been more than 5 business days,tracking;escalate,guaranteed delivery,medium
+warranty,My blender stopped working after 8 months.,one year warranty; proof of purchase,Please send proof of purchase so we can review the one year warranty,proof of purchase;one year warranty,lifetime warranty,medium
+discount stacking,Can I use two discount codes?,one promo code per order,Yes, stack as many codes as you want,one promo code,stack as many,high
+human handoff,I am angry and want a supervisor.,handoff to human support,I will connect you with a support lead now,human;support lead,calm down,high</textarea></label>
+          <div class="actions">
+            <button id="generateBtn" type="button">Run QA</button>
+            <button class="secondary" id="exportBtn" type="button">Export Issues</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Report</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="passRate">0%</span><p>pass rate</p></div>
+          <div class="metric"><span id="failures">0</span><p>failures</p></div>
+          <div class="metric"><span id="critical">0</span><p>critical gaps</p></div>
+          <div class="metric"><span id="monthly">$399</span><p>monthly QA</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="results" type="button">Results</button>
+          <button class="tab" data-view="gaps" type="button">Gap Queue</button>
+          <button class="tab" data-view="report" type="button">Report</button>
+        </div>
+        <section class="output view active" id="resultsView"><div id="resultsOut"></div></section>
+        <section class="output view" id="gapsView"><div id="gapsOut"></div></section>
+        <section class="output view" id="reportView"><textarea id="reportOut"></textarea></section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$299 bot QA pack</h2>
+          <p>Grade 50 support scenarios, catch policy drift, and ship a regression report for the support manager.</p>
+        </div>
+        <div class="side-section">
+          <h3>Sell to</h3>
+          <div class="chips"><span>SaaS support</span><span>Shopify</span><span>Helpdesk AI</span><span>Ops teams</span></div>
+        </div>
+        <div class="side-section"><p class="notice">Use real approved policies as the source of truth before final client delivery.</p></div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

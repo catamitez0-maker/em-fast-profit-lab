@@ -96,7 +96,7 @@ Sell to small agencies after two direct customers prove delivery.
 
 - Send 30 personalized messages per day.
 - Use one observation, one artifact promise, and one low-friction CTA.
-- Do not sell all nine products at once.
+- Do not sell all fourteen products at once. Lead with InboxReady or AI Search for the new 2026 batch, and keep ReturnReply Pro as the proven ecommerce fallback.
 - Track prospects as `sent`, `warm`, `sample requested`, `paid`, `delivered`, or `monthly offered`.
 
 Gate: keep the offer only if it gets at least 2 warm replies per 20 messages.

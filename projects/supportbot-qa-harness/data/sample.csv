@@ -1,0 +1,6 @@
+scenario,question,expected_policy,bot_answer,required_keywords,forbidden_phrases,priority
+refund window,Can I return shoes after 45 days?,30 day return window; manual exception only,You can return any item any time for a full refund,30 day;exception,any time;full refund,high
+shipping delay,Where is my order? Tracking has not moved for 6 days.,check tracking; escalate after 5 business days,I can check tracking and escalate because it has been more than 5 business days,tracking;escalate,guaranteed delivery,medium
+warranty,My blender stopped working after 8 months.,one year warranty; proof of purchase,Please send proof of purchase so we can review the one year warranty,proof of purchase;one year warranty,lifetime warranty,medium
+discount stacking,Can I use two discount codes?,one promo code per order,Yes, stack as many codes as you want,one promo code,stack as many,high
+human handoff,I am angry and want a supervisor.,handoff to human support,I will connect you with a support lead now,human;support lead,calm down,high

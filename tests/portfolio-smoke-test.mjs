@@ -1,7 +1,23 @@
 import { existsSync, readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 
-const slugs = ["monetization-command-center", "reviewspark-local", "quotequick-pro", "menu-margin-lab", "invoice-nudge", "stayreply-kit", "chargeback-evidence-kit", "return-reply-pro", "alttext-cataloger", "churn-save-script"];
+const slugs = [
+  "monetization-command-center",
+  "reviewspark-local",
+  "quotequick-pro",
+  "menu-margin-lab",
+  "invoice-nudge",
+  "stayreply-kit",
+  "chargeback-evidence-kit",
+  "return-reply-pro",
+  "alttext-cataloger",
+  "churn-save-script",
+  "inboxready-deliverability-audit",
+  "ai-search-presence-monitor",
+  "vibecode-security-smoke-test",
+  "supportbot-qa-harness",
+  "ai-disclosure-register-kit"
+];
 const sharedSlugs = slugs.filter((slug) => slug !== "reviewspark-local");
 assert.ok(existsSync(new URL("../docs/launch-playbook.md", import.meta.url)), "missing launch playbook");
 assert.ok(existsSync(new URL("../projects/shared/app-utils.js", import.meta.url)), "missing shared app utilities");

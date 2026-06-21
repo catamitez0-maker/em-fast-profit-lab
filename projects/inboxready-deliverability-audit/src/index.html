@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InboxReady Deliverability Audit</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">InboxReady Deliverability Audit</p>
+        <h1>Turn sending data into a paid inbox-risk report.</h1>
+      </div>
+      <button class="secondary" id="sampleBtn" type="button">Load Sample</button>
+    </header>
+    <main class="app">
+      <section>
+        <div class="panel">
+          <div class="grid">
+            <label>Client<input id="client" value="BrightCart"></label>
+            <label>Primary Domain<input id="domain" value="brightcart.co"></label>
+            <label>Monthly Sends<input id="monthly" type="number" value="7550"></label>
+            <label>Audit Lead<input id="lead" value="EM Lab"></label>
+          </div>
+          <label class="field-stack">Campaign And DNS CSV<textarea id="campaignData">campaign,from_domain,platform,volume,bounce_rate,spam_rate,authentication,dmarc,unsubscribe,domain_age_days,subject
+June launch,brightcart.co,Klaviyo,4200,1.6,0.04,spf dkim,dmarc quarantine,one-click,540,New summer arrivals are live
+Cold partner list,brightcart.co,Google Workspace,900,4.8,0.21,spf only,none,manual,42,Quick question about wholesale
+Winback test,brightcart.co,Mailchimp,1800,2.7,0.09,spf dkim,dmarc none,one-click,540,We saved your cart
+Founder update,brightcart.co,ConvertKit,650,0.8,0.02,spf dkim,dmarc reject,one-click,540,A short note from our founder</textarea></label>
+          <div class="actions">
+            <button id="generateBtn" type="button">Generate Audit</button>
+            <button class="secondary" id="exportBtn" type="button">Export CSV</button>
+            <button class="secondary" id="copyBtn" type="button">Copy Report</button>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span id="score">0</span><p>inbox readiness</p></div>
+          <div class="metric"><span id="blockers">0</span><p>blockers</p></div>
+          <div class="metric"><span id="monitors">0</span><p>watch items</p></div>
+          <div class="metric"><span id="retainer">$99</span><p>monthly monitor</p></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-view="audit" type="button">Audit</button>
+          <button class="tab" data-view="fixes" type="button">Fix Plan</button>
+          <button class="tab" data-view="brief" type="button">Client Brief</button>
+        </div>
+        <section class="output view active" id="auditView"><div id="auditOut"></div></section>
+        <section class="output view" id="fixesView"><div id="fixesOut"></div></section>
+        <section class="output view" id="briefView"><textarea id="briefOut"></textarea></section>
+      </section>
+      <aside class="side">
+        <div class="side-section">
+          <p class="eyebrow">Fast offer</p>
+          <h2>$149 deliverability compliance audit</h2>
+          <p>Review sender authentication, complaint risk, unsubscribe readiness, and campaign hygiene from one pasted CSV.</p>
+        </div>
+        <div class="side-section">
+          <h3>Sell to</h3>
+          <div class="chips"><span>Newsletters</span><span>DTC</span><span>Outbound</span><span>Agencies</span></div>
+        </div>
+        <div class="side-section"><p class="notice">This is a readiness audit, not live DNS verification. Confirm DNS records before final delivery.</p></div>
+      </aside>
+    </main>
+    <div id="toast"></div>
+    <script src="../../shared/app-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

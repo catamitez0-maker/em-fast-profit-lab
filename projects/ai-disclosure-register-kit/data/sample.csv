@@ -1,0 +1,6 @@
+asset,campaign,channel,asset_type,ai_used,human_review,label_present,region,risk_notes
+Summer hero image,June launch,web,image,generated,yes,no,EU,synthetic product scene
+Founder newsletter,June launch,email,text,assisted,yes,yes,US,edited by founder
+TikTok product demo,June launch,social,video,generated,no,no,EU,synthetic voiceover
+Help center update,Support refresh,web,text,assisted,yes,no,US,policy article drafted with AI
+Ad banner set,Retargeting,paid,image,generated,yes,yes,EU,AI background and copy variants

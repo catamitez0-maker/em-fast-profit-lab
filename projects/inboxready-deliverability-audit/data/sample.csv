@@ -1,0 +1,5 @@
+campaign,from_domain,platform,volume,bounce_rate,spam_rate,authentication,dmarc,unsubscribe,domain_age_days,subject
+June launch,brightcart.co,Klaviyo,4200,1.6,0.04,spf dkim,dmarc quarantine,one-click,540,New summer arrivals are live
+Cold partner list,brightcart.co,Google Workspace,900,4.8,0.21,spf only,none,manual,42,Quick question about wholesale
+Winback test,brightcart.co,Mailchimp,1800,2.7,0.09,spf dkim,dmarc none,one-click,540,We saved your cart
+Founder update,brightcart.co,ConvertKit,650,0.8,0.02,spf dkim,dmarc reject,one-click,540,A short note from our founder

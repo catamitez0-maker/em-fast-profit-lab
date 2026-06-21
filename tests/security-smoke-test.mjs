@@ -17,7 +17,12 @@ const lightweightApps = [
   "../projects/chargeback-evidence-kit/src/app.js",
   "../projects/return-reply-pro/src/app.js",
   "../projects/alttext-cataloger/src/app.js",
-  "../projects/churn-save-script/src/app.js"
+  "../projects/churn-save-script/src/app.js",
+  "../projects/inboxready-deliverability-audit/src/app.js",
+  "../projects/ai-search-presence-monitor/src/app.js",
+  "../projects/vibecode-security-smoke-test/src/app.js",
+  "../projects/supportbot-qa-harness/src/app.js",
+  "../projects/ai-disclosure-register-kit/src/app.js"
 ];
 
 const lightweightHtmlFiles = lightweightApps.map((path) => path.replace("/src/app.js", "/src/index.html"));
@@ -50,7 +55,12 @@ for (const path of [
   "../projects/chargeback-evidence-kit/src/app.js",
   "../projects/return-reply-pro/src/app.js",
   "../projects/alttext-cataloger/src/app.js",
-  "../projects/churn-save-script/src/app.js"
+  "../projects/churn-save-script/src/app.js",
+  "../projects/inboxready-deliverability-audit/src/app.js",
+  "../projects/ai-search-presence-monitor/src/app.js",
+  "../projects/vibecode-security-smoke-test/src/app.js",
+  "../projects/supportbot-qa-harness/src/app.js",
+  "../projects/ai-disclosure-register-kit/src/app.js"
 ]) {
   const js = read(path);
   assert.ok(js.includes("csvCell"), `${path} should use safe CSV cells from AppKit`);
@@ -63,7 +73,12 @@ for (const path of [
   "../projects/chargeback-evidence-kit/src/app.js",
   "../projects/return-reply-pro/src/app.js",
   "../projects/alttext-cataloger/src/app.js",
-  "../projects/churn-save-script/src/app.js"
+  "../projects/churn-save-script/src/app.js",
+  "../projects/inboxready-deliverability-audit/src/app.js",
+  "../projects/ai-search-presence-monitor/src/app.js",
+  "../projects/vibecode-security-smoke-test/src/app.js",
+  "../projects/supportbot-qa-harness/src/app.js",
+  "../projects/ai-disclosure-register-kit/src/app.js"
 ]) {
   const js = read(path);
   assert.ok(js.includes("csvToRows"), `${path} should use quoted CSV parsing from AppKit`);
