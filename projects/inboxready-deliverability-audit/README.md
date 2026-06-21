@@ -19,3 +19,23 @@ projects/inboxready-deliverability-audit/src/index.html
 ## Delivery
 
 Ask the buyer for a campaign export and their current SPF, DKIM, DMARC, unsubscribe, bounce, and complaint posture. Paste the rows into the tool, generate the report, export the CSV, and send the client brief.
+
+## Sales Automation
+
+Run the full sales and delivery kit:
+
+```bash
+node projects/inboxready-deliverability-audit/scripts/run-automation.mjs
+```
+
+It generates:
+
+- `automation/generated/scored-leads.csv`
+- `automation/generated/outreach-queue.csv`
+- `automation/generated/outreach-sequences.md`
+- `automation/generated/audit-results.csv`
+- `automation/generated/sample-audit-report.md`
+- `automation/generated/delivery-report.md`
+- `automation/generated/handoff-checklist.md`
+
+Use `data/leads.csv` for the prospect pool, `data/sample.csv` for campaign audit rows, and `data/client-intake.csv` for report metadata.

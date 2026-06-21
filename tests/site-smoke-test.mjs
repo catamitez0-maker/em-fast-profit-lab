@@ -49,6 +49,11 @@ assert.ok(payPage.includes("AI Search Presence Monitor"), "pay page should list 
 assert.ok(payPage.includes("VibeCode Security Smoke Test"), "pay page should list VibeCode Security Smoke Test");
 assert.ok(payPage.includes("SupportBot QA Harness"), "pay page should list SupportBot QA Harness");
 assert.ok(payPage.includes("AI Disclosure Register Kit"), "pay page should list AI Disclosure Register Kit");
+assert.ok(payPage.includes("sample-audit-report.md"), "pay page should link the InboxReady sample report");
+
+const samplesPage = read("../samples/index.html");
+assert.ok(samplesPage.includes("InboxReady Deliverability Audit"), "samples page should list InboxReady");
+assert.ok(samplesPage.includes("outreach-sequences.md"), "samples page should link InboxReady outreach sequences");
 
 for (const slug of ["return-reply-pro", "alttext-cataloger", "chargeback-evidence-kit"]) {
   const input = read(`../samples/${slug}/input.csv`);

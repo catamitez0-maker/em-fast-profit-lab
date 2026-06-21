@@ -75,6 +75,14 @@ samples/index.html
 
 The outreach page now reads `data/prospect-leads.csv` in the browser and generates mailto/contact actions dynamically, so new prospects should be added to the CSV first.
 
+For the current InboxReady sales push, run:
+
+```bash
+node projects/inboxready-deliverability-audit/scripts/run-automation.mjs
+```
+
+This creates a ranked lead queue, first-touch and follow-up copy, a sample audit report, a delivery report, and a human-review handoff checklist under `projects/inboxready-deliverability-audit/automation/generated/`.
+
 
 ## Runtime Structure
 
@@ -121,6 +129,7 @@ node tests/site-smoke-test.mjs
 node tests/round2-backtest.mjs
 node tests/opportunity-scan-implementation-test.mjs
 node projects/inboxready-deliverability-audit/tests/smoke-test.mjs
+node projects/inboxready-deliverability-audit/tests/automation-test.mjs
 node projects/ai-search-presence-monitor/tests/smoke-test.mjs
 node projects/vibecode-security-smoke-test/tests/smoke-test.mjs
 node projects/supportbot-qa-harness/tests/smoke-test.mjs
@@ -131,10 +140,4 @@ Each project also includes its own `tests/smoke-test.mjs`; run all of them after
 
 ## Packaged Output
 
-The current packaged outputs are:
-
-```text
-outputs/fast-profit-projects-portfolio.zip
-outputs/market-demand-single-products.zip
-outputs/monetization-ready-portfolio.zip
-```
+Generated ZIP packages are local build artifacts and are ignored under `outputs/`. Keep only `outputs/.gitkeep` in Git unless a packaged artifact is intentionally published elsewhere.
