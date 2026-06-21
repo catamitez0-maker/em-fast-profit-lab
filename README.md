@@ -43,6 +43,8 @@ samples/*/delivery-brief.md
 
 See [docs/opportunity-portfolio.md](docs/opportunity-portfolio.md) for the first portfolio decision memo and source links. See [docs/market-round-2.md](docs/market-round-2.md) for the second market scan focused on high-demand single-product MVPs, [docs/round2-backtest-report.md](docs/round2-backtest-report.md) for the backtest results and improvements, and [docs/monetization-strategy.md](docs/monetization-strategy.md) for the complete go-to-market strategy.
 
+The latest broad money-lab scan is [docs/market-opportunity-scan-2026-06.md](docs/market-opportunity-scan-2026-06.md), with the ranked data table in [data/opportunity-scan-2026-06.csv](data/opportunity-scan-2026-06.csv).
+
 ## Launch Execution
 
 Start with the revenue sprint:
