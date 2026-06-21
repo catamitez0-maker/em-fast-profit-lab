@@ -1,409 +1,64 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Outreach Campaign | EM Fast-Profit Lab</title>
-<meta name="robots" content="noindex">
-<style>
-:root{--ink:#17252e;--muted:#60717c;--line:#d8e2e7;--paper:#f5f2e9;--surface:#fff;--green:#0f766e}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper)}header{padding:28px clamp(18px,4vw,54px);background:var(--surface);border-bottom:1px solid var(--line)}h1{margin:0;font-size:clamp(32px,5vw,62px);line-height:1}p{color:var(--muted)}main{padding:22px clamp(18px,4vw,54px) 48px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 11px;border:0;border-radius:8px;background:var(--green);color:white;text-decoration:none;font-weight:850;cursor:pointer}select,input{min-height:38px;border:1px solid var(--line);border-radius:8px;padding:8px;background:white}.table{overflow:auto;border:1px solid var(--line);border-radius:8px;background:white}table{width:100%;border-collapse:collapse;min-width:1100px}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{font-size:12px;text-transform:uppercase;color:var(--muted);background:#f8fbfb}td span{color:var(--muted);font-size:13px}td:last-child{display:flex;gap:8px;flex-wrap:wrap}.counts{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.count{background:white;border:1px solid var(--line);border-radius:8px;padding:12px;min-width:140px}.count strong{display:block;font-size:26px}
-</style>
-</head>
-<body>
-<header><h1>Outreach Campaign</h1><p>Manual, one-by-one outreach queue for the first 34 prospects. Check each source page before sending.</p></header>
-<main>
-<div class="toolbar"><input id="filter" placeholder="Filter prospect or offer"><button id="copyTop" type="button">Copy top ready email</button><a class="button" href="index.html">Back to site</a></div>
-<div class="counts"><div class="count"><strong id="total">34</strong><span>Total leads</span></div><div class="count"><strong id="ready">34</strong><span>Ready</span></div><div class="count"><strong id="sent">0</strong><span>Marked sent locally</span></div></div>
-<div class="table"><table><thead><tr><th>#</th><th>Prospect</th><th>Contact</th><th>Personalized opening</th><th>Action</th></tr></thead><tbody><tr data-status="ready"><td>1</td><td><strong>Tighten Up Apparel</strong><br><span>ReturnReply Pro</span></td><td>info@tuapparel.com</td><td>I noticed your store already exposes customer-service and delivery questions, so returns/exchanges are likely a repeat support workflow.</td><td><a class="button" href="mailto:info@tuapparel.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Tighten%20Up%20Apparel&body=Hi%20there%2C%0A%0AI%20noticed%20your%20store%20already%20exposes%20customer-service%20and%20delivery%20questions%2C%20so%20returns/exchanges%20are%20likely%20a%20repeat%20support%20workflow.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I noticed your store already exposes customer-service and delivery questions, so returns/exchanges are likely a repeat support workflow.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>2</td><td><strong>1234 Apparel &amp; Wood</strong><br><span>ReturnReply Pro</span></td><td>orders1234clothing@gmail.com</td><td>Your customer-service page suggests order questions are already centralized; I can turn return rows into a reply queue.</td><td><a class="button" href="mailto:orders1234clothing@gmail.com?subject=quick%20returnreply%20pro%20cleanup%20for%201234%20Apparel%20%26%20Wood&body=Hi%20there%2C%0A%0AYour%20customer-service%20page%20suggests%20order%20questions%20are%20already%20centralized%3B%20I%20can%20turn%20return%20rows%20into%20a%20reply%20queue.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your customer-service page suggests order questions are already centralized; I can turn return rows into a reply queue.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>3</td><td><strong>Shop Elan</strong><br><span>ReturnReply Pro</span></td><td>info@shopelan.com</td><td>I saw your returns portal; I can help convert return reasons into reply templates and store-credit paths.</td><td><a class="button" href="mailto:info@shopelan.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Shop%20Elan&body=Hi%20there%2C%0A%0AI%20saw%20your%20returns%20portal%3B%20I%20can%20help%20convert%20return%20reasons%20into%20reply%20templates%20and%20store-credit%20paths.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I saw your returns portal; I can help convert return reasons into reply templates and store-credit paths.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>4</td><td><strong>Shogun Fight Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>Your footer has return/refund policy and sizing links, which are good signals for a return-reply cleanup pass.</td><td><a class="button" href="https://www.shogunfight.com/pages/contact-us" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-Your footer has return/refund policy and sizing links, which are good signals for a return-reply cleanup pass.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>5</td><td><strong>Custom Apparel by Dana</strong><br><span>InvoiceNudge</span></td><td>dana@customapparelbydana.com</td><td>Custom orders often create manual follow-up; I can turn open order or invoice rows into polite reminders.</td><td><a class="button" href="mailto:dana@customapparelbydana.com?subject=quick%20invoicenudge%20cleanup%20for%20Custom%20Apparel%20by%20Dana&body=Hi%20there%2C%0A%0ACustom%20orders%20often%20create%20manual%20follow-up%3B%20I%20can%20turn%20open%20order%20or%20invoice%20rows%20into%20polite%20reminders.%0A%0AI%20run%20a%20small%20productized%20service%20called%20InvoiceNudge.%20You%20send%20five%20open%20invoice%20or%20order-follow-up%20rows%2C%20and%20I%20send%20back%20polite%20follow-up%20queue%20and%20reminder%20sequence%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%2499.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Custom orders often create manual follow-up; I can turn open order or invoice rows into polite reminders.
-
-I run a small productized service called InvoiceNudge. You send five open invoice or order-follow-up rows, and I send back polite follow-up queue and reminder sequence within 24 hours.
-
-The first pass is $99. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>6</td><td><strong>Phyre Apparel Store</strong><br><span>ReturnReply Pro</span></td><td>sales@phyreapparel.com.au</td><td>Your returns policy already handles missing refunds and customer follow-up; I can package reply templates from real cases.</td><td><a class="button" href="mailto:sales@phyreapparel.com.au?subject=quick%20returnreply%20pro%20cleanup%20for%20Phyre%20Apparel%20Store&body=Hi%20there%2C%0A%0AYour%20returns%20policy%20already%20handles%20missing%20refunds%20and%20customer%20follow-up%3B%20I%20can%20package%20reply%20templates%20from%20real%20cases.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your returns policy already handles missing refunds and customer follow-up; I can package reply templates from real cases.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>7</td><td><strong>Felicite Apparel</strong><br><span>AltText Cataloger</span></td><td>support@feliciteapparel.com</td><td>I can run a 100-image alt-text pass for product images and return a clean CSV your team can upload.</td><td><a class="button" href="mailto:support@feliciteapparel.com?subject=quick%20alttext%20cataloger%20cleanup%20for%20Felicite%20Apparel&body=Hi%20there%2C%0A%0AI%20can%20run%20a%20100-image%20alt-text%20pass%20for%20product%20images%20and%20return%20a%20clean%20CSV%20your%20team%20can%20upload.%0A%0AI%20run%20a%20small%20productized%20service%20called%20AltText%20Cataloger.%20You%20send%20product%20image%20rows%2C%20and%20I%20send%20back%20100-image%20alt%20text%20CSV%20with%20accessibility%20flags%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24199.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I can run a 100-image alt-text pass for product images and return a clean CSV your team can upload.
-
-I run a small productized service called AltText Cataloger. You send product image rows, and I send back 100-image alt text CSV with accessibility flags within 24 hours.
-
-The first pass is $199. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>8</td><td><strong>C1 Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>Your returns page already documents the workflow; I can turn return cases into a decision and reply queue.</td><td><a class="button" href="https://c1apparelshop.com/pages/returns-and-exchanges" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-Your returns page already documents the workflow; I can turn return cases into a decision and reply queue.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>9</td><td><strong>David Dunleavy Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>Your exchange/credit policy is a good fit for store-credit reply templates and triage rules.</td><td><a class="button" href="https://dunleavyapparel.myshopify.com/pages/returns-and-exchanges" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-Your exchange/credit policy is a good fit for store-credit reply templates and triage rules.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>10</td><td><strong>DTC Outlet</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>I noticed the 60-day return window; a return queue pass can standardize reply handling and exchange paths.</td><td><a class="button" href="https://dtcoutlet.com/pages/returns-exchanges" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-I noticed the 60-day return window; a return queue pass can standardize reply handling and exchange paths.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>11</td><td><strong>Dialtune Drums</strong><br><span>Chargeback Evidence Kit</span></td><td>hi@dialtunedrums.com</td><td>I can organize one dispute or refund issue into a clean evidence checklist and customer-contact note.</td><td><a class="button" href="mailto:hi@dialtunedrums.com?subject=quick%20chargeback%20evidence%20kit%20cleanup%20for%20Dialtune%20Drums&body=Hi%20there%2C%0A%0AI%20can%20organize%20one%20dispute%20or%20refund%20issue%20into%20a%20clean%20evidence%20checklist%20and%20customer-contact%20note.%0A%0AI%20run%20a%20small%20productized%20service%20called%20Chargeback%20Evidence%20Kit.%20You%20send%20one%20anonymized%20dispute%20or%20refund%20record%2C%20and%20I%20send%20back%20evidence%20checklist%2C%20missing-item%20list%2C%20and%20counterargument%20draft%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24249.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I can organize one dispute or refund issue into a clean evidence checklist and customer-contact note.
-
-I run a small productized service called Chargeback Evidence Kit. You send one anonymized dispute or refund record, and I send back evidence checklist, missing-item list, and counterargument draft within 24 hours.
-
-The first pass is $249. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>12</td><td><strong>The Plant Ecologist</strong><br><span>InvoiceNudge</span></td><td>theplantecologist@gmail.com</td><td>For small shops, invoice/order follow-up often stays manual; I can build a weekly nudge queue from rows.</td><td><a class="button" href="mailto:theplantecologist@gmail.com?subject=quick%20invoicenudge%20cleanup%20for%20The%20Plant%20Ecologist&body=Hi%20there%2C%0A%0AFor%20small%20shops%2C%20invoice/order%20follow-up%20often%20stays%20manual%3B%20I%20can%20build%20a%20weekly%20nudge%20queue%20from%20rows.%0A%0AI%20run%20a%20small%20productized%20service%20called%20InvoiceNudge.%20You%20send%20five%20open%20invoice%20or%20order-follow-up%20rows%2C%20and%20I%20send%20back%20polite%20follow-up%20queue%20and%20reminder%20sequence%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%2499.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-For small shops, invoice/order follow-up often stays manual; I can build a weekly nudge queue from rows.
-
-I run a small productized service called InvoiceNudge. You send five open invoice or order-follow-up rows, and I send back polite follow-up queue and reminder sequence within 24 hours.
-
-The first pass is $99. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>13</td><td><strong>Lone Star Feed Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>Your policy includes replacement and exchange cases; I can turn those rules into reusable customer replies.</td><td><a class="button" href="https://lonestarfeedapparel.com/pages/lone-star-feed-apparel-replacement-or-returns-policy" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-Your policy includes replacement and exchange cases; I can turn those rules into reusable customer replies.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>14</td><td><strong>Graceful Grit Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>Exception-based return policies are a good fit for consistent support replies and approval notes.</td><td><a class="button" href="https://gracefulgrit.org/pages/contact" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-Exception-based return policies are a good fit for consistent support replies and approval notes.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>15</td><td><strong>Hudson O&#x27;Neal Apparel</strong><br><span>ReturnReply Pro</span></td><td>hudsononealracing71@gmail.com</td><td>Your policy already asks customers to email for service requests; I can build a reply pack for common cases.</td><td><a class="button" href="mailto:hudsononealracing71@gmail.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Hudson%20O%27Neal%20Apparel&body=Hi%20there%2C%0A%0AYour%20policy%20already%20asks%20customers%20to%20email%20for%20service%20requests%3B%20I%20can%20build%20a%20reply%20pack%20for%20common%20cases.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your policy already asks customers to email for service requests; I can build a reply pack for common cases.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>16</td><td><strong>838 Apparel</strong><br><span>AltText Cataloger</span></td><td>contact form</td><td>I can create a 100-product-image alt-text CSV and flag gaps before the next collection update.</td><td><a class="button" href="https://838apparel.com/pages/contact" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-I can create a 100-product-image alt-text CSV and flag gaps before the next collection update.
-
-I run a small productized service called AltText Cataloger. You send product image rows, and I send back 100-image alt text CSV with accessibility flags within 24 hours.
-
-The first pass is $199. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>17</td><td><strong>shopthev</strong><br><span>ReturnReply Pro</span></td><td>customerservice@brandito.net</td><td>I saw your return/exchange policy asks customers to email service and complete a return document, which is exactly the kind of repeat workflow ReturnReply Pro can clean up.</td><td><a class="button" href="mailto:customerservice@brandito.net?subject=quick%20returnreply%20pro%20cleanup%20for%20shopthev&body=Hi%20there%2C%0A%0AI%20saw%20your%20return/exchange%20policy%20asks%20customers%20to%20email%20service%20and%20complete%20a%20return%20document%2C%20which%20is%20exactly%20the%20kind%20of%20repeat%20workflow%20ReturnReply%20Pro%20can%20clean%20up.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I saw your return/exchange policy asks customers to email service and complete a return document, which is exactly the kind of repeat workflow ReturnReply Pro can clean up.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>18</td><td><strong>Render Goods</strong><br><span>ReturnReply Pro</span></td><td>support@rendergoods.com</td><td>Your refund policy includes return authorization, inspection, and missing-refund follow-up; I can turn those cases into a reply queue and customer templates.</td><td><a class="button" href="mailto:support@rendergoods.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Render%20Goods&body=Hi%20there%2C%0A%0AYour%20refund%20policy%20includes%20return%20authorization%2C%20inspection%2C%20and%20missing-refund%20follow-up%3B%20I%20can%20turn%20those%20cases%20into%20a%20reply%20queue%20and%20customer%20templates.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your refund policy includes return authorization, inspection, and missing-refund follow-up; I can turn those cases into a reply queue and customer templates.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>19</td><td><strong>Bentley</strong><br><span>ReturnReply Pro</span></td><td>onlineservice@bentleygroup.com</td><td>Your return process starts with customer service, which is a good fit for a return triage queue and reusable replies.</td><td><a class="button" href="mailto:onlineservice@bentleygroup.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Bentley&body=Hi%20there%2C%0A%0AYour%20return%20process%20starts%20with%20customer%20service%2C%20which%20is%20a%20good%20fit%20for%20a%20return%20triage%20queue%20and%20reusable%20replies.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return process starts with customer service, which is a good fit for a return triage queue and reusable replies.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>20</td><td><strong>Santa Barbara Roasting Co.</strong><br><span>Chargeback Evidence Kit</span></td><td>mail@sbcoffee.com</td><td>Your refund policy has approval and inspection steps; I can organize dispute/refund evidence into a cleaner packet when issues escalate.</td><td><a class="button" href="mailto:mail@sbcoffee.com?subject=quick%20chargeback%20evidence%20kit%20cleanup%20for%20Santa%20Barbara%20Roasting%20Co.&body=Hi%20there%2C%0A%0AYour%20refund%20policy%20has%20approval%20and%20inspection%20steps%3B%20I%20can%20organize%20dispute/refund%20evidence%20into%20a%20cleaner%20packet%20when%20issues%20escalate.%0A%0AI%20run%20a%20small%20productized%20service%20called%20Chargeback%20Evidence%20Kit.%20You%20send%20one%20anonymized%20dispute%20or%20refund%20record%2C%20and%20I%20send%20back%20evidence%20checklist%2C%20missing-item%20list%2C%20and%20counterargument%20draft%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24249.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your refund policy has approval and inspection steps; I can organize dispute/refund evidence into a cleaner packet when issues escalate.
-
-I run a small productized service called Chargeback Evidence Kit. You send one anonymized dispute or refund record, and I send back evidence checklist, missing-item list, and counterargument draft within 24 hours.
-
-The first pass is $249. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>21</td><td><strong>UCS Store</strong><br><span>ReturnReply Pro</span></td><td>UCS@grossmanmarketing.com</td><td>I noticed returns and order-error replacements both route through email; I can build a return decision queue and reply pack from sample rows.</td><td><a class="button" href="mailto:UCS@grossmanmarketing.com?subject=quick%20returnreply%20pro%20cleanup%20for%20UCS%20Store&body=Hi%20there%2C%0A%0AI%20noticed%20returns%20and%20order-error%20replacements%20both%20route%20through%20email%3B%20I%20can%20build%20a%20return%20decision%20queue%20and%20reply%20pack%20from%20sample%20rows.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I noticed returns and order-error replacements both route through email; I can build a return decision queue and reply pack from sample rows.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>22</td><td><strong>Assumption - St. Bridget School Store</strong><br><span>ReturnReply Pro</span></td><td>store@asbschool.org</td><td>Your return process asks customers to contact the store first; I can help standardize the replies and approval checklist.</td><td><a class="button" href="mailto:store@asbschool.org?subject=quick%20returnreply%20pro%20cleanup%20for%20Assumption%20-%20St.%20Bridget%20School%20Store&body=Hi%20there%2C%0A%0AYour%20return%20process%20asks%20customers%20to%20contact%20the%20store%20first%3B%20I%20can%20help%20standardize%20the%20replies%20and%20approval%20checklist.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return process asks customers to contact the store first; I can help standardize the replies and approval checklist.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>23</td><td><strong>Duke&#x27;s Honky Tonk Apparel</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>I noticed your apparel store has a printable return/exchange form; I can turn those requests into a cleaner decision queue.</td><td><a class="button" href="https://dukes-honky-tonk-apparel.myshopify.com/pages/contact" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-I noticed your apparel store has a printable return/exchange form; I can turn those requests into a cleaner decision queue.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>24</td><td><strong>The Mardi Gras School of Cooking</strong><br><span>InvoiceNudge</span></td><td>chef@themardigrasschoolofcooking.com</td><td>For a small class/product business, follow-up and refund questions can stay manual; I can turn open rows into a polite response queue.</td><td><a class="button" href="mailto:chef@themardigrasschoolofcooking.com?subject=quick%20invoicenudge%20cleanup%20for%20The%20Mardi%20Gras%20School%20of%20Cooking&body=Hi%20there%2C%0A%0AFor%20a%20small%20class/product%20business%2C%20follow-up%20and%20refund%20questions%20can%20stay%20manual%3B%20I%20can%20turn%20open%20rows%20into%20a%20polite%20response%20queue.%0A%0AI%20run%20a%20small%20productized%20service%20called%20InvoiceNudge.%20You%20send%20five%20open%20invoice%20or%20order-follow-up%20rows%2C%20and%20I%20send%20back%20polite%20follow-up%20queue%20and%20reminder%20sequence%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%2499.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-For a small class/product business, follow-up and refund questions can stay manual; I can turn open rows into a polite response queue.
-
-I run a small productized service called InvoiceNudge. You send five open invoice or order-follow-up rows, and I send back polite follow-up queue and reminder sequence within 24 hours.
-
-The first pass is $99. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>25</td><td><strong>Victoria Saddlery</strong><br><span>ReturnReply Pro</span></td><td>contact form</td><td>I noticed your returns process includes store-credit preference; I can build reply templates that route eligible returns toward credit or exchange.</td><td><a class="button" href="https://victoriasaddlery.myshopify.com/pages/contact" target="_blank" rel="noopener">Open contact page</a><button type="button" data-copy="Hi there,
-
-I noticed your returns process includes store-credit preference; I can build reply templates that route eligible returns toward credit or exchange.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>26</td><td><strong>SmithStore</strong><br><span>ReturnReply Pro</span></td><td>smithstore@primetimecustom.com</td><td>Your return page asks customers to email order, items, and tracking info; I can turn that into a clean intake and reply queue.</td><td><a class="button" href="mailto:smithstore@primetimecustom.com?subject=quick%20returnreply%20pro%20cleanup%20for%20SmithStore&body=Hi%20there%2C%0A%0AYour%20return%20page%20asks%20customers%20to%20email%20order%2C%20items%2C%20and%20tracking%20info%3B%20I%20can%20turn%20that%20into%20a%20clean%20intake%20and%20reply%20queue.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return page asks customers to email order, items, and tracking info; I can turn that into a clean intake and reply queue.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>27</td><td><strong>Boarders Apparel Co</strong><br><span>ReturnReply Pro</span></td><td>hello@boardersapparelco.com.au</td><td>I saw your contact page points customers toward returns and exchanges; I can package common cases into reusable replies.</td><td><a class="button" href="mailto:hello@boardersapparelco.com.au?subject=quick%20returnreply%20pro%20cleanup%20for%20Boarders%20Apparel%20Co&body=Hi%20there%2C%0A%0AI%20saw%20your%20contact%20page%20points%20customers%20toward%20returns%20and%20exchanges%3B%20I%20can%20package%20common%20cases%20into%20reusable%20replies.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-I saw your contact page points customers toward returns and exchanges; I can package common cases into reusable replies.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>28</td><td><strong>Frock you up</strong><br><span>ReturnReply Pro</span></td><td>frock.u.up@gmail.com</td><td>Your return intake asks for reason and refund/exchange preference; I can turn those fields into a decision queue and reply pack.</td><td><a class="button" href="mailto:frock.u.up@gmail.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Frock%20you%20up&body=Hi%20there%2C%0A%0AYour%20return%20intake%20asks%20for%20reason%20and%20refund/exchange%20preference%3B%20I%20can%20turn%20those%20fields%20into%20a%20decision%20queue%20and%20reply%20pack.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return intake asks for reason and refund/exchange preference; I can turn those fields into a decision queue and reply pack.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>29</td><td><strong>Diverse Style by Sydni Dion</strong><br><span>ReturnReply Pro</span></td><td>info@DiverseStylebySydniDion.com</td><td>Your return policy has a 7-day window and eligibility requirements; consistent replies could save support time and reduce confusion.</td><td><a class="button" href="mailto:info@DiverseStylebySydniDion.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Diverse%20Style%20by%20Sydni%20Dion&body=Hi%20there%2C%0A%0AYour%20return%20policy%20has%20a%207-day%20window%20and%20eligibility%20requirements%3B%20consistent%20replies%20could%20save%20support%20time%20and%20reduce%20confusion.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return policy has a 7-day window and eligibility requirements; consistent replies could save support time and reduce confusion.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>30</td><td><strong>CriniereLife</strong><br><span>AltText Cataloger</span></td><td>victoria@crinierelife.com</td><td>Equestrian apparel relies heavily on product imagery; I can run a 100-image alt-text pass and return an upload-ready CSV.</td><td><a class="button" href="mailto:victoria@crinierelife.com?subject=quick%20alttext%20cataloger%20cleanup%20for%20CriniereLife&body=Hi%20there%2C%0A%0AEquestrian%20apparel%20relies%20heavily%20on%20product%20imagery%3B%20I%20can%20run%20a%20100-image%20alt-text%20pass%20and%20return%20an%20upload-ready%20CSV.%0A%0AI%20run%20a%20small%20productized%20service%20called%20AltText%20Cataloger.%20You%20send%20product%20image%20rows%2C%20and%20I%20send%20back%20100-image%20alt%20text%20CSV%20with%20accessibility%20flags%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24199.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Equestrian apparel relies heavily on product imagery; I can run a 100-image alt-text pass and return an upload-ready CSV.
-
-I run a small productized service called AltText Cataloger. You send product image rows, and I send back 100-image alt text CSV with accessibility flags within 24 hours.
-
-The first pass is $199. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>31</td><td><strong>Poco Loco Swim Shop</strong><br><span>ReturnReply Pro</span></td><td>kenzie.jones64@pocolocosw.com</td><td>Your policy requires customers to contact you before returning or exchanging; I can turn those cases into a reply and decision queue.</td><td><a class="button" href="mailto:kenzie.jones64@pocolocosw.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Poco%20Loco%20Swim%20Shop&body=Hi%20there%2C%0A%0AYour%20policy%20requires%20customers%20to%20contact%20you%20before%20returning%20or%20exchanging%3B%20I%20can%20turn%20those%20cases%20into%20a%20reply%20and%20decision%20queue.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your policy requires customers to contact you before returning or exchanging; I can turn those cases into a reply and decision queue.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>32</td><td><strong>Realeather</strong><br><span>Chargeback Evidence Kit</span></td><td>realeather@silvercreekleather.com</td><td>Your return process includes validation and photos; I can organize a dispute/refund evidence checklist when cases get complex.</td><td><a class="button" href="mailto:realeather@silvercreekleather.com?subject=quick%20chargeback%20evidence%20kit%20cleanup%20for%20Realeather&body=Hi%20there%2C%0A%0AYour%20return%20process%20includes%20validation%20and%20photos%3B%20I%20can%20organize%20a%20dispute/refund%20evidence%20checklist%20when%20cases%20get%20complex.%0A%0AI%20run%20a%20small%20productized%20service%20called%20Chargeback%20Evidence%20Kit.%20You%20send%20one%20anonymized%20dispute%20or%20refund%20record%2C%20and%20I%20send%20back%20evidence%20checklist%2C%20missing-item%20list%2C%20and%20counterargument%20draft%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24249.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return process includes validation and photos; I can organize a dispute/refund evidence checklist when cases get complex.
-
-I run a small productized service called Chargeback Evidence Kit. You send one anonymized dispute or refund record, and I send back evidence checklist, missing-item list, and counterargument draft within 24 hours.
-
-The first pass is $249. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>33</td><td><strong>Covered in Cotton</strong><br><span>ReturnReply Pro</span></td><td>hello@coveredincotton.com</td><td>Your return/exchange intake asks for name, order number, and product info; I can structure that into a decision queue and customer replies.</td><td><a class="button" href="mailto:hello@coveredincotton.com?subject=quick%20returnreply%20pro%20cleanup%20for%20Covered%20in%20Cotton&body=Hi%20there%2C%0A%0AYour%20return/exchange%20intake%20asks%20for%20name%2C%20order%20number%2C%20and%20product%20info%3B%20I%20can%20structure%20that%20into%20a%20decision%20queue%20and%20customer%20replies.%0A%0AI%20run%20a%20small%20productized%20service%20called%20ReturnReply%20Pro.%20You%20send%2010-50%20return%20request%20rows%2C%20and%20I%20send%20back%20decision%20queue%2C%20customer%20replies%2C%20and%20exchange/store-credit%20paths%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24149.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Your return/exchange intake asks for name, order number, and product info; I can structure that into a decision queue and customer replies.
-
-I run a small productized service called ReturnReply Pro. You send 10-50 return request rows, and I send back decision queue, customer replies, and exchange/store-credit paths within 24 hours.
-
-The first pass is $149. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr><tr data-status="ready"><td>34</td><td><strong>Naturally Smart Vitamins</strong><br><span>Chargeback Evidence Kit</span></td><td>info@naturallysmartvitamins.com</td><td>Case-by-case refunds can become evidence-heavy; I can organize refund/dispute records into a cleaner review packet.</td><td><a class="button" href="mailto:info@naturallysmartvitamins.com?subject=quick%20chargeback%20evidence%20kit%20cleanup%20for%20Naturally%20Smart%20Vitamins&body=Hi%20there%2C%0A%0ACase-by-case%20refunds%20can%20become%20evidence-heavy%3B%20I%20can%20organize%20refund/dispute%20records%20into%20a%20cleaner%20review%20packet.%0A%0AI%20run%20a%20small%20productized%20service%20called%20Chargeback%20Evidence%20Kit.%20You%20send%20one%20anonymized%20dispute%20or%20refund%20record%2C%20and%20I%20send%20back%20evidence%20checklist%2C%20missing-item%20list%2C%20and%20counterargument%20draft%20within%2024%20hours.%0A%0AThe%20first%20pass%20is%20%24249.%20If%20helpful%2C%20reply%20with%20%27sample%27%20and%20I%20will%20send%20an%20anonymized%20example%20before%20you%20decide.%0A%0ABest%2C%0A%7Byour_name%7D%0A%0AIf%20this%20is%20not%20relevant%2C%20reply%20%27not%20now%27%20and%20I%20will%20close%20the%20loop.">Open email</a><button type="button" data-copy="Hi there,
-
-Case-by-case refunds can become evidence-heavy; I can organize refund/dispute records into a cleaner review packet.
-
-I run a small productized service called Chargeback Evidence Kit. You send one anonymized dispute or refund record, and I send back evidence checklist, missing-item list, and counterargument draft within 24 hours.
-
-The first pass is $249. If helpful, reply with &#x27;sample&#x27; and I will send an anonymized example before you decide.
-
-Best,
-{your_name}
-
-If this is not relevant, reply &#x27;not now&#x27; and I will close the loop.">Copy</button><select><option>ready</option><option>sent</option><option>warm</option><option>sample requested</option><option>paid</option><option>not now</option></select></td></tr></tbody></table></div>
-</main>
-<script>
-const KEY='em-outreach-status-v1';
-const saved=JSON.parse(localStorage.getItem(KEY)||'{}');
-document.querySelectorAll('tbody tr').forEach((row,i)=>{
-  const select=row.querySelector('select');
-  if(saved[i]) select.value=saved[i];
-  row.dataset.status=select.value;
-  select.addEventListener('change',()=>{saved[i]=select.value;row.dataset.status=select.value;localStorage.setItem(KEY,JSON.stringify(saved));counts();});
-});
-document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{await navigator.clipboard.writeText(btn.dataset.copy);btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',1200);}));
-document.getElementById('filter').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('tbody tr').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'':'none');});
-document.getElementById('copyTop').addEventListener('click',()=>{const row=[...document.querySelectorAll('tbody tr')].find(r=>r.dataset.status==='ready');if(row)row.querySelector('[data-copy]').click();});
-function counts(){const rows=[...document.querySelectorAll('tbody tr')];document.getElementById('total').textContent=rows.length;document.getElementById('ready').textContent=rows.filter(r=>r.querySelector('select').value==='ready').length;document.getElementById('sent').textContent=rows.filter(r=>r.querySelector('select').value==='sent').length;}
-counts();
-</script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Outreach Campaign | EM Fast-Profit Lab</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/outreach.js" defer></script>
+  </head>
+  <body class="site outreach-page">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html">EM Fast-Profit Lab</a>
+      <div class="nav-links">
+        <a href="index.html#offers">Offers</a>
+        <a href="projects/index.html">Demos</a>
+        <a href="data/prospect-leads.csv">Lead CSV</a>
+      </div>
+    </nav>
+
+    <header class="outreach-hero">
+      <div class="wrap">
+        <div>
+          <p class="kicker">Manual outbound queue</p>
+          <h1>Outreach Campaign</h1>
+          <p class="hero-lede">One-by-one prospect workflow for the first 34 ecommerce leads. Check each public source, personalize lightly, then send through your own email or contact form.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="band">
+        <div class="toolbar-panel" aria-label="Outreach filters">
+          <input id="filter" type="search" placeholder="Filter prospect, offer, contact, or opening">
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option value="ready">ready</option>
+            <option value="sent">sent</option>
+            <option value="warm">warm</option>
+            <option value="sample requested">sample requested</option>
+            <option value="paid">paid</option>
+            <option value="not now">not now</option>
+          </select>
+          <button class="button" id="copyTop" type="button">Copy top ready pitch</button>
+          <a class="button secondary" href="index.html">Back to site</a>
+        </div>
+
+        <div class="stats-grid" aria-label="Outreach status summary">
+          <div class="metric-tile"><strong id="total">0</strong><span>Total leads</span></div>
+          <div class="metric-tile"><strong id="ready">0</strong><span>Ready</span></div>
+          <div class="metric-tile"><strong id="sent">0</strong><span>Marked sent locally</span></div>
+          <div class="metric-tile"><strong id="warm">0</strong><span>Warm or sample requested</span></div>
+          <div class="metric-tile"><strong id="paid">0</strong><span>Paid</span></div>
+        </div>
+
+        <div class="lead-list" id="leadList" aria-live="polite">
+          <div class="empty-state">Loading lead queue...</div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" aria-live="polite"></div>
+  </body>
 </html>

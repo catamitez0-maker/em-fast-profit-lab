@@ -54,8 +54,17 @@ docs/promotion-content-pack.md
 outreach.html
 ```
 
+The outreach page now reads `data/prospect-leads.csv` in the browser and generates mailto/contact actions dynamically, so new prospects should be added to the CSV first.
+
 
 ## Runtime Structure
+
+Public marketing pages share one site stylesheet and one outreach queue script:
+
+```text
+assets/site.css
+assets/outreach.js
+```
 
 The nine lightweight project apps share a small static runtime:
 
@@ -81,8 +90,10 @@ node --check projects/alttext-cataloger/src/app.js
 node --check projects/churn-save-script/src/app.js
 node --check projects/monetization-command-center/src/app.js
 node --check projects/shared/app-utils.js
+node --check assets/outreach.js
 node tests/portfolio-smoke-test.mjs
 node tests/security-smoke-test.mjs
+node tests/site-smoke-test.mjs
 node tests/round2-backtest.mjs
 ```
 
