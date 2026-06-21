@@ -50,6 +50,7 @@ docs/customer-acquisition-plan.md
 data/prospect-leads.csv
 data/outreach-crm.csv
 docs/outreach-drafts.md
+docs/promotion-content-pack.md
 ```
 
 
