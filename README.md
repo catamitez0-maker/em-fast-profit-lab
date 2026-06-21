@@ -16,6 +16,16 @@ The public marketing landing page is:
 index.html
 ```
 
+The paid-pilot booking and proof assets are:
+
+```text
+pay/index.html
+samples/index.html
+samples/*/input.csv
+samples/*/output.csv
+samples/*/delivery-brief.md
+```
+
 | # | Project | Path | Fast Offer |
 | --- | --- | --- | --- |
 | 00 | Monetization Command Center | `projects/monetization-command-center/src/index.html` | revenue operations |
@@ -52,6 +62,8 @@ data/outreach-crm.csv
 docs/outreach-drafts.md
 docs/promotion-content-pack.md
 outreach.html
+pay/index.html
+samples/index.html
 ```
 
 The outreach page now reads `data/prospect-leads.csv` in the browser and generates mailto/contact actions dynamically, so new prospects should be added to the CSV first.

@@ -1,0 +1,5 @@
+evidence_item,status,why_it_matters,next_step
+Order record,ready,"Shows transaction amount, date, and order identity.","Attach receipt or order export."
+Delivery proof,ready,"Supports fulfillment and delivery timeline.","Attach carrier tracking screenshot."
+Customer message,ready,"Shows customer contact history before dispute.","Attach support thread excerpt."
+Policy screenshot,missing,"Helps prove disclosed refund and claim process at purchase time.","Capture live policy page and timestamp it before submission."

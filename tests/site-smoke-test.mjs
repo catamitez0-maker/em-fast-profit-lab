@@ -5,6 +5,8 @@ const read = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
 
 const publicPages = [
   "../index.html",
+  "../pay/index.html",
+  "../samples/index.html",
   "../projects/index.html",
   "../outreach.html",
   "../offers/return-reply-pro/index.html",
@@ -36,5 +38,20 @@ assert.doesNotMatch(outreachJs, /split\(['"]?,['"]?\)/, "outreach script should 
 
 const leadCsv = read("../data/prospect-leads.csv");
 assert.equal(leadCsv.trim().split(/\r?\n/).length - 1, 34, "prospect lead CSV should keep the 34-lead launch queue");
+
+const payPage = read("../pay/index.html");
+assert.ok(payPage.includes("Book pilot"), "pay page should expose a pilot booking action");
+assert.ok(payPage.includes("ReturnReply Pro"), "pay page should list ReturnReply Pro");
+assert.ok(payPage.includes("AltText Cataloger"), "pay page should list AltText Cataloger");
+assert.ok(payPage.includes("Chargeback Evidence Kit"), "pay page should list Chargeback Evidence Kit");
+
+for (const slug of ["return-reply-pro", "alttext-cataloger", "chargeback-evidence-kit"]) {
+  const input = read(`../samples/${slug}/input.csv`);
+  const output = read(`../samples/${slug}/output.csv`);
+  const brief = read(`../samples/${slug}/delivery-brief.md`);
+  assert.ok(input.includes(","), `${slug} sample input should be CSV-like`);
+  assert.ok(output.includes(","), `${slug} sample output should be CSV-like`);
+  assert.ok(brief.includes("Follow-Up Offer"), `${slug} brief should include a follow-up offer`);
+}
 
 console.log("Site smoke checks passed");

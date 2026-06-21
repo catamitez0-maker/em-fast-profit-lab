@@ -279,6 +279,14 @@ button.button:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.checkout-grid,
+.sample-grid,
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .step-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   counter-reset: steps;
@@ -304,6 +312,70 @@ button.button:hover {
   justify-content: space-between;
   gap: 18px;
   padding: 20px;
+}
+
+.checkout-card,
+.proof-card {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(19, 35, 38, .06);
+}
+
+.checkout-card h2,
+.proof-card h3 {
+  margin: 0;
+}
+
+.checkout-card p,
+.proof-card p {
+  margin: 0;
+}
+
+.price-line {
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.included-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.checkout-card .actions {
+  margin-top: auto;
+}
+
+.artifact-list {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.artifact-list a {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--blue);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.artifact-list a:hover {
+  background: var(--sky);
 }
 
 .card h3,
@@ -651,6 +723,9 @@ button.button:hover {
   }
 
   .card-grid,
+  .checkout-grid,
+  .sample-grid,
+  .proof-grid,
   .hub-grid,
   .offer-hero .wrap,
   .lead-row {

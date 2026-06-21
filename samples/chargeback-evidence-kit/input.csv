@@ -1,0 +1,5 @@
+type,detail,date,available
+order_record,Order CB-7742 for $186.40,2026-06-02,yes
+delivery_proof,Carrier tracking shows delivered to customer ZIP,2026-06-06,yes
+customer_message,Customer asked about delivery timing before dispute,2026-06-05,yes
+policy_screenshot,Refund policy showing delivery and claims process,2026-06-02,no
