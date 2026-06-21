@@ -1,27 +1,23 @@
 const appName = "AI Search Presence Monitor";
-const { $, safeNumber, csvToRows, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
+const { $, safeNumber, csvRecords, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
 let promptRows = [];
 let backlogRows = [];
 
-function value(row, headers, name, fallbackIndex) {
-  const index = headers.indexOf(name);
-  return row[index >= 0 ? index : fallbackIndex] || "";
-}
+const trim = (value) => String(value || "").trim();
+const lower = (value) => trim(value).toLowerCase();
 
 function parsePrompts(text) {
-  const rows = csvToRows(text);
-  const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
-  return rows.map((row) => ({
-    prompt: value(row, headers, "prompt", 0).trim(),
-    engine: value(row, headers, "engine", 1).trim(),
-    mentioned: value(row, headers, "mentioned", 2).trim().toLowerCase(),
-    position: safeNumber(value(row, headers, "position", 3)),
-    sentiment: value(row, headers, "sentiment", 4).trim().toLowerCase(),
-    targetUrl: value(row, headers, "target_url", 5).trim(),
-    citedUrl: value(row, headers, "cited_url", 6).trim(),
-    competitor: value(row, headers, "competitor", 7).trim(),
-    gap: value(row, headers, "gap", 8).trim()
-  })).filter((row) => row.prompt && row.engine);
+  return csvRecords(text, [
+    { key: "prompt", header: "prompt", index: 0, transform: trim },
+    { key: "engine", header: "engine", index: 1, transform: trim },
+    { key: "mentioned", header: "mentioned", index: 2, transform: lower },
+    { key: "position", header: "position", index: 3, transform: safeNumber },
+    { key: "sentiment", header: "sentiment", index: 4, transform: lower },
+    { key: "targetUrl", header: "target_url", index: 5, transform: trim },
+    { key: "citedUrl", header: "cited_url", index: 6, transform: trim },
+    { key: "competitor", header: "competitor", index: 7, transform: trim },
+    { key: "gap", header: "gap", index: 8, transform: trim }
+  ]).filter((row) => row.prompt && row.engine);
 }
 
 function classify(row) {

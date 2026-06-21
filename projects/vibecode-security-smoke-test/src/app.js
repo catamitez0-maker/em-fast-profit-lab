@@ -1,27 +1,23 @@
 const appName = "VibeCode Security Smoke Test";
-const { $, csvToRows, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
+const { $, csvRecords, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
 let findings = [];
 
 const severityWeight = { critical: 4, high: 3, medium: 2, low: 1 };
 
-function get(row, headers, name, fallbackIndex) {
-  const index = headers.indexOf(name);
-  return row[index >= 0 ? index : fallbackIndex] || "";
-}
+const trim = (value) => String(value || "").trim();
+const lower = (value) => trim(value).toLowerCase();
 
 function parseFindings(text) {
-  const rows = csvToRows(text);
-  const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
-  return rows.map((row) => ({
-    area: get(row, headers, "area", 0).trim(),
-    route: get(row, headers, "route", 1).trim(),
-    check: get(row, headers, "check", 2).trim(),
-    severity: get(row, headers, "severity", 3).trim().toLowerCase(),
-    authRequired: get(row, headers, "auth_required", 4).trim().toLowerCase(),
-    publicData: get(row, headers, "public_data", 5).trim(),
-    llmFeature: get(row, headers, "llm_feature", 6).trim().toLowerCase(),
-    evidence: get(row, headers, "evidence", 7).trim()
-  })).filter((row) => row.area && row.check);
+  return csvRecords(text, [
+    { key: "area", header: "area", index: 0, transform: trim },
+    { key: "route", header: "route", index: 1, transform: trim },
+    { key: "check", header: "check", index: 2, transform: trim },
+    { key: "severity", header: "severity", index: 3, transform: lower },
+    { key: "authRequired", header: "auth_required", index: 4, transform: lower },
+    { key: "publicData", header: "public_data", index: 5, transform: trim },
+    { key: "llmFeature", header: "llm_feature", index: 6, transform: lower },
+    { key: "evidence", header: "evidence", index: 7, transform: trim }
+  ]).filter((row) => row.area && row.check);
 }
 
 function classify(row) {

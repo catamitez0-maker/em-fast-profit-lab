@@ -1,28 +1,24 @@
 const appName = "InboxReady Deliverability Audit";
-const { $, safeNumber, money, csvToRows, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
+const { $, safeNumber, csvRecords, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
 let auditRows = [];
 
-function getValue(row, headers, name, fallbackIndex) {
-  const index = headers.indexOf(name);
-  return row[index >= 0 ? index : fallbackIndex] || "";
-}
+const trim = (value) => String(value || "").trim();
+const lower = (value) => trim(value).toLowerCase();
 
 function parseCampaigns(text) {
-  const rows = csvToRows(text);
-  const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
-  return rows.map((row) => ({
-    campaign: getValue(row, headers, "campaign", 0).trim(),
-    fromDomain: getValue(row, headers, "from_domain", 1).trim(),
-    platform: getValue(row, headers, "platform", 2).trim(),
-    volume: safeNumber(getValue(row, headers, "volume", 3)),
-    bounceRate: safeNumber(getValue(row, headers, "bounce_rate", 4)),
-    spamRate: safeNumber(getValue(row, headers, "spam_rate", 5)),
-    authentication: getValue(row, headers, "authentication", 6).trim().toLowerCase(),
-    dmarc: getValue(row, headers, "dmarc", 7).trim().toLowerCase(),
-    unsubscribe: getValue(row, headers, "unsubscribe", 8).trim().toLowerCase(),
-    domainAgeDays: safeNumber(getValue(row, headers, "domain_age_days", 9)),
-    subject: getValue(row, headers, "subject", 10).trim()
-  })).filter((row) => row.campaign && row.fromDomain);
+  return csvRecords(text, [
+    { key: "campaign", header: "campaign", index: 0, transform: trim },
+    { key: "fromDomain", header: "from_domain", index: 1, transform: trim },
+    { key: "platform", header: "platform", index: 2, transform: trim },
+    { key: "volume", header: "volume", index: 3, transform: safeNumber },
+    { key: "bounceRate", header: "bounce_rate", index: 4, transform: safeNumber },
+    { key: "spamRate", header: "spam_rate", index: 5, transform: safeNumber },
+    { key: "authentication", header: "authentication", index: 6, transform: lower },
+    { key: "dmarc", header: "dmarc", index: 7, transform: lower },
+    { key: "unsubscribe", header: "unsubscribe", index: 8, transform: lower },
+    { key: "domainAgeDays", header: "domain_age_days", index: 9, transform: safeNumber },
+    { key: "subject", header: "subject", index: 10, transform: trim }
+  ]).filter((row) => row.campaign && row.fromDomain);
 }
 
 function classify(row) {

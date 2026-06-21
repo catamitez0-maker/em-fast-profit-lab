@@ -1,12 +1,12 @@
 # Monetization Command Center Package
 
-This project is not sold directly to customers. It packages the nine customer-facing products into a sellable operating system.
+This project is not sold directly to customers. It packages the fourteen customer-facing products into a sellable operating system.
 
 ## Internal Value
 
 | Capability | Outcome |
 | --- | --- |
-| Offer ranking | Avoid selling all nine projects at once |
+| Offer ranking | Avoid selling all fourteen projects at once |
 | Revenue calculator | Estimate sprint cash, new MRR, and effective hourly rate |
 | Script generator | Produce a first outbound message and follow-up sequence |
 | Delivery checklist | Keep paid work under 60 minutes and protect quality |

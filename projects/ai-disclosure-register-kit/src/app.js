@@ -1,27 +1,23 @@
 const appName = "AI Disclosure Register Kit";
-const { $, csvToRows, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
+const { $, csvRecords, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
 let assetRows = [];
 let queueRows = [];
 
-function get(row, headers, name, fallbackIndex) {
-  const index = headers.indexOf(name);
-  return row[index >= 0 ? index : fallbackIndex] || "";
-}
+const trim = (value) => String(value || "").trim();
+const lower = (value) => trim(value).toLowerCase();
 
 function parseAssets(text) {
-  const rows = csvToRows(text);
-  const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
-  return rows.map((row) => ({
-    asset: get(row, headers, "asset", 0).trim(),
-    campaign: get(row, headers, "campaign", 1).trim(),
-    channel: get(row, headers, "channel", 2).trim(),
-    assetType: get(row, headers, "asset_type", 3).trim().toLowerCase(),
-    aiUsed: get(row, headers, "ai_used", 4).trim().toLowerCase(),
-    humanReview: get(row, headers, "human_review", 5).trim().toLowerCase(),
-    labelPresent: get(row, headers, "label_present", 6).trim().toLowerCase(),
-    region: get(row, headers, "region", 7).trim(),
-    riskNotes: get(row, headers, "risk_notes", 8).trim()
-  })).filter((row) => row.asset && row.aiUsed);
+  return csvRecords(text, [
+    { key: "asset", header: "asset", index: 0, transform: trim },
+    { key: "campaign", header: "campaign", index: 1, transform: trim },
+    { key: "channel", header: "channel", index: 2, transform: trim },
+    { key: "assetType", header: "asset_type", index: 3, transform: lower },
+    { key: "aiUsed", header: "ai_used", index: 4, transform: lower },
+    { key: "humanReview", header: "human_review", index: 5, transform: lower },
+    { key: "labelPresent", header: "label_present", index: 6, transform: lower },
+    { key: "region", header: "region", index: 7, transform: trim },
+    { key: "riskNotes", header: "risk_notes", index: 8, transform: trim }
+  ]).filter((row) => row.asset && row.aiUsed);
 }
 
 function classify(row) {

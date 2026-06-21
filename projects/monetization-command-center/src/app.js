@@ -2,6 +2,86 @@ const { $, safeNumber, money, el, csvCell, badgeCell, renderTableInto, tableNode
 
 const offers = [
   {
+    slug: "inboxready-deliverability-audit",
+    name: "InboxReady Deliverability Audit",
+    buyer: "Newsletter, outbound, ecommerce, or agency sender",
+    offer: "Deliverability compliance audit",
+    price: 149,
+    retainer: 99,
+    deliveryHours: 1,
+    score: 96,
+    channel: "Newsletter operators, small SaaS teams, DTC brands, outbound agencies",
+    input: "Campaign export plus SPF, DKIM, DMARC, unsubscribe, bounce, and complaint posture",
+    artifact: "Inbox readiness score, blocker list, watch items, DNS/campaign fix plan, CSV export",
+    hook: "Email revenue can disappear quietly when authentication, unsubscribe, bounces, or complaints drift out of shape.",
+    upsell: "Monthly sender monitoring plus pre-launch campaign checklist",
+    risk: "Confirm DNS and header evidence before final delivery; do not guarantee inbox placement."
+  },
+  {
+    slug: "ai-search-presence-monitor",
+    name: "AI Search Presence Monitor",
+    buyer: "SEO agency, local business, ecommerce brand, or B2B SaaS team",
+    offer: "AI-search visibility audit",
+    price: 199,
+    retainer: 299,
+    deliveryHours: 1.25,
+    score: 94,
+    channel: "SEO agencies, content teams, local business owners, ecommerce operators",
+    input: "25 buyer-intent prompts with AI answer mentions, positions, competitors, citations, and gaps",
+    artifact: "Visibility score, missing prompt list, competitor notes, and content-fix backlog",
+    hook: "AI answers may mention competitors while skipping you; I can show the exact prompts and pages to fix first.",
+    upsell: "Monthly prompt tracking and content backlog refresh",
+    risk: "Treat AI answer snapshots as volatile; repeat prompt sets consistently."
+  },
+  {
+    slug: "vibecode-security-smoke-test",
+    name: "VibeCode Security Smoke Test",
+    buyer: "AI-built app founder, no-code builder, indie SaaS, or small agency",
+    offer: "Launch security smoke test",
+    price: 249,
+    retainer: 199,
+    deliveryHours: 1.5,
+    score: 88,
+    channel: "AI builder communities, launch posts, no-code agencies, indie SaaS groups",
+    input: "App routes, stack, launch date, and smoke-test findings for auth, secrets, payments, uploads, and LLM features",
+    artifact: "Launch gate, critical findings, remediation queue, and retest checklist",
+    hook: "Before you share the app publicly, I can catch the obvious launch blockers that AI-built apps often miss.",
+    upsell: "Monthly release-gate retest for active builders",
+    risk: "Position as a smoke test, not a full penetration test or compliance certification."
+  },
+  {
+    slug: "supportbot-qa-harness",
+    name: "SupportBot QA Harness",
+    buyer: "SaaS support leader, Shopify support team, or helpdesk AI implementer",
+    offer: "Bot QA regression pack",
+    price: 299,
+    retainer: 399,
+    deliveryHours: 1.5,
+    score: 86,
+    channel: "Support leaders, helpdesk AI consultants, CX communities, Shopify app teams",
+    input: "Support scenarios, approved policies, bot answers, required keywords, and forbidden claims",
+    artifact: "Pass-rate report, critical gap queue, policy-drift notes, and regression CSV",
+    hook: "A support bot that gives one wrong refund or policy answer can create tickets, refunds, and trust damage.",
+    upsell: "Monthly bot regression run after policy or knowledge-base changes",
+    risk: "Use approved policies as source of truth; do not evaluate legal or medical support claims without expert review."
+  },
+  {
+    slug: "ai-disclosure-register-kit",
+    name: "AI Disclosure Register Kit",
+    buyer: "Marketing team, publisher, agency, or SMB using generated content",
+    offer: "AI-content disclosure readiness pack",
+    price: 199,
+    retainer: 149,
+    deliveryHours: 1,
+    score: 84,
+    channel: "Marketing agencies, content teams, publishers, ecommerce creative teams",
+    input: "AI content inventory with asset, campaign, channel, AI use, human review, label status, and region",
+    artifact: "Disclosure register, label queue, review gaps, reusable policy copy, CSV export",
+    hook: "If your team uses generated images, videos, or copy, a clean register is the fastest way to know what needs labels and review.",
+    upsell: "Monthly content inventory refresh and label QA",
+    risk: "Sell operational readiness and evidence organization, not legal advice."
+  },
+  {
     slug: "return-reply-pro",
     name: "ReturnReply Pro",
     buyer: "DTC support lead or ecommerce operator",
@@ -225,7 +305,8 @@ function renderPriority() {
     badgeCell(String(offer.score), offer.score >= 85 ? "badge" : offer.score >= 75 ? "badge warn" : "badge bad"),
     offer.buyer
   ]);
-  const note = el("p", "Sell the top three first: ReturnReply Pro for fast ecommerce operations pain, AltText Cataloger for bulk repeatability, and Chargeback Evidence Kit for high-urgency revenue protection.");
+  const topThree = [...offers].sort((a, b) => b.score - a.score).slice(0, 3).map((offer) => offer.name).join(", ");
+  const note = el("p", `Sell one wedge at a time. Current top three: ${topThree}.`);
   const table = tableNode(["Rank", "Offer", "Entry", "Retainer", "Score", "Buyer"], rows);
   table.classList.add("score-table");
   $("#priorityOut").replaceChildren(note, table);
@@ -289,7 +370,7 @@ function exportPlan() {
 
 function resetDefaults() {
   localStorage.removeItem("monetizationCommandCenter");
-  $("#focusOffer").value = "return-reply-pro";
+  $("#focusOffer").value = "inboxready-deliverability-audit";
   $("#leadsPerDay").value = 30;
   $("#replyRate").value = 8;
   $("#closeRate").value = 20;
@@ -309,7 +390,7 @@ function init() {
     option.textContent = offer.name;
     select.appendChild(option);
   });
-  select.value = "return-reply-pro";
+  select.value = "inboxready-deliverability-audit";
   loadState();
   bindTabs();
   ["focusOffer", "leadsPerDay", "replyRate", "closeRate", "sprintDays", "retainerAttach", "deliveryHours", "personalization"].forEach((id) => {

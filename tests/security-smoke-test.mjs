@@ -81,7 +81,7 @@ for (const path of [
   "../projects/ai-disclosure-register-kit/src/app.js"
 ]) {
   const js = read(path);
-  assert.ok(js.includes("csvToRows"), `${path} should use quoted CSV parsing from AppKit`);
+  assert.match(js, /csvToRows|csvRecords/, `${path} should use quoted CSV parsing from AppKit`);
   assert.doesNotMatch(js, /split\(['"]?,['"]?\)/, `${path} should not split CSV on raw commas`);
 }
 

@@ -11,6 +11,6 @@ assert.ok(html.includes("../../shared/app-utils.js"), "missing shared runtime");
 assert.ok(css.includes("../../shared/app-shell.css"), "missing shared CSS");
 assert.ok(doc.includes("Price"), "missing pricing table");
 assert.ok(js.includes("VibeCode Security Smoke Test"), "missing app name");
-assert.ok(js.includes("csvToRows"), "missing CSV parser");
+assert.ok(js.includes("csvRecords"), "missing shared CSV record parser");
 assert.ok(js.includes("exportCsv"), "missing CSV export");
 console.log("vibecode-security-smoke-test smoke checks passed");

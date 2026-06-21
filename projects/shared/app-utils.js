@@ -51,6 +51,22 @@
     return rows.filter((cells) => cells.some((cellValue) => String(cellValue).trim()));
   }
 
+  function csvRecords(text, schema) {
+    const rows = csvToRows(text);
+    const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
+    const headerIndexes = new Map(headers.map((header, index) => [header, index]));
+    const read = (row, header, fallbackIndex) => {
+      const index = headerIndexes.has(header) ? headerIndexes.get(header) : -1;
+      return row[index >= 0 ? index : fallbackIndex] ?? "";
+    };
+
+    return rows.map((row) => schema.reduce((record, field) => {
+      const raw = read(row, field.header, field.index);
+      record[field.key] = field.transform ? field.transform(raw, row, headers) : String(raw).trim();
+      return record;
+    }, {}));
+  }
+
   function csvCell(value) {
     let text = String(value ?? "");
     if (/^[=+\-@]/.test(text.trim())) text = `'${text}`;
@@ -142,6 +158,7 @@
     money,
     el,
     csvToRows,
+    csvRecords,
     csvCell,
     badgeCell,
     tableNode,

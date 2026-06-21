@@ -1,29 +1,25 @@
 const appName = "SupportBot QA Harness";
-const { $, csvToRows, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
+const { $, csvRecords, csvCell, badgeCell, renderTableInto, download, copyText, toast, bindTabs } = window.AppKit;
 let scenarioRows = [];
 let issueRows = [];
 
-function get(row, headers, name, fallbackIndex) {
-  const index = headers.indexOf(name);
-  return row[index >= 0 ? index : fallbackIndex] || "";
-}
+const trim = (value) => String(value || "").trim();
+const lower = (value) => trim(value).toLowerCase();
 
 function parseList(value) {
   return String(value || "").split(";").map((item) => item.trim().toLowerCase()).filter(Boolean);
 }
 
 function parseScenarios(text) {
-  const rows = csvToRows(text);
-  const headers = rows.shift()?.map((header) => header.trim().toLowerCase()) || [];
-  return rows.map((row) => ({
-    scenario: get(row, headers, "scenario", 0).trim(),
-    question: get(row, headers, "question", 1).trim(),
-    expectedPolicy: get(row, headers, "expected_policy", 2).trim(),
-    botAnswer: get(row, headers, "bot_answer", 3).trim(),
-    requiredKeywords: parseList(get(row, headers, "required_keywords", 4)),
-    forbiddenPhrases: parseList(get(row, headers, "forbidden_phrases", 5)),
-    priority: get(row, headers, "priority", 6).trim().toLowerCase()
-  })).filter((row) => row.scenario && row.question);
+  return csvRecords(text, [
+    { key: "scenario", header: "scenario", index: 0, transform: trim },
+    { key: "question", header: "question", index: 1, transform: trim },
+    { key: "expectedPolicy", header: "expected_policy", index: 2, transform: trim },
+    { key: "botAnswer", header: "bot_answer", index: 3, transform: trim },
+    { key: "requiredKeywords", header: "required_keywords", index: 4, transform: parseList },
+    { key: "forbiddenPhrases", header: "forbidden_phrases", index: 5, transform: parseList },
+    { key: "priority", header: "priority", index: 6, transform: lower }
+  ]).filter((row) => row.scenario && row.question);
 }
 
 function grade(row) {
